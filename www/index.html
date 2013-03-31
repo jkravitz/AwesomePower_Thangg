@@ -24,13 +24,49 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Awesome Power Thangg</title>
+        <script  src="./jquery/js/jquery-ui-1.10.2.custom.js"></script>
+        <script src="./jquery/development-bundle/ui/jquery.ui.core.js"></script>
+		<script src="./jquery/development-bundle/ui/jquery.ui.widget.js"></script>
+		<script src="./jquery/development-bundle/ui/jquery.ui.mouse.js"></script>
+		<script src="./jquery/development-bundle/ui/jquery.ui.draggable.js"></script>
+		<script src="./jquery/development-bundle/ui/jquery.ui.sortable.js"></script>
+        <link rel="stylesheet" href="jquery/development-bundle/demos/demos.css">
+		<style>
+		ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
+		li { margin: 5px; padding: 5px; width: 150px; }
+		</style>
+        <script type="text/javascript">
+	$(function() {
+		$( "#sortable" ).sortable({
+			revert: true
+		});
+		$( "#draggable" ).draggable({
+			connectToSortable: "#sortable",
+			helper: "clone",
+			revert: "invalid"
+		});
+		$( "ul, li" ).disableSelection();
+	});
+	</script>
     </head>
     <body>
-        <div class="app">
-        <img src="img/logo.png" alt="broken" id="meh" draggable="true">
-          <h1>APT</h1>
+    <div class="app">
+      <h1>APT</h1>
+      <ul>
+		<li id="draggable" class="ui-state-highlight">Drag me down</li>
+	   </ul>
+
+		<ul id="sortable">
+		<li class="ui-state-default">Item 1</li>
+		<li class="ui-state-default">Item 2</li>
+		<li class="ui-state-default">Item 3</li>
+		<li class="ui-state-default">Item 4</li>
+		<li class="ui-state-default">Item 5</li>
+	   </ul>
             <h2> Jordan Kravitz </h2>
+                    <img id ="meh" src="img/logo.png" alt= "meh">
             <div id="deviceready">
+             <a href="" >Link</a>
               <p class="status pending blink">Connecting to Device</p>
                 <p class="status complete blink hide">Device is Ready</p>
             </div>
@@ -40,5 +76,6 @@
         <script type="text/javascript">
             app.initialize();
         </script>
+		
     </body>
 </html>

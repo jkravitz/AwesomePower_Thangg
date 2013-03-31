@@ -15,7 +15,8 @@
  * KIND, either express or implied.  See the License for the
  * specific language governing permissions and limitations
  * under the License.
- */
+ */ 
+ 
 var app = {
     initialize: function() {
         this.bind();
@@ -39,4 +40,8 @@ var app = {
         var completeElem = document.querySelector('#' + id + ' .complete');
         completeElem.className = completeElem.className.split('hide').join('');
     }
+	
 };
+
+
+
