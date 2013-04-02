@@ -29,8 +29,10 @@
         <script  src="./jquery/js/jquery-ui-1.10.2.custom.js"></script>
         <script  src="./jquery/js/jquery.ui.touch-punch.js"></script>
 		<style>
-            ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
-            li { margin: 5px; padding: 5px; width: 150px; height: 100px; float:left }
+            #sortable { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
+            #sortable { margin: 5px; padding: 5px; width: 150px; height: 100px; float:left }
+			#draggable { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
+            #draggable { margin: 5px; padding: 5px; width: 150px; height: 100px; float:left }
 		</style>
         <script type="text/javascript">
             $(function() {
@@ -60,8 +62,8 @@
             </div>
 
             <div id="maincontent">
-                <ul>
-                    <li id="draggable" class="ui-state-highlight">
+                <ul id="draggable">
+                    <li class="ui-state-highlight">
                         <p>+</p>
                     </li>
                 </ul>
