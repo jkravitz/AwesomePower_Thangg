@@ -63,6 +63,8 @@ body {
 
 #maincontent {
     padding: 25px;
+	text-align: center;
+	font-size: 26px;
 }
 
 .headerNavButton {
@@ -125,7 +127,3 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
-#add{
-	text-align: center;
-	font-size: 46px;
-}
