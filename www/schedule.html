@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Resizable - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" type="text/css" href="css/index.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <style>
+  #resizable { width: 80px; height: 80px; padding: 0.0em; }
+  #resizable h3 { text-align: center; margin: 0; }
+
+  #resizable1 { width: 80px; height: 80px; padding: 0.0em; }
+  #resizable1 h3 { text-align: center; margin: 0; }
+
+  #leftcolumn { width: 924px; height:750; border: 1px solid red; float: left}
+  #rightcolumn { width: 100px; height:750; border: 1px solid red; float: left}
+#weekrow { height:80; border: 1px solid red; }
+  </style>
+  <script>
+  $(function() {
+    $( "#resizable" )
+	.resizable({handles: "e, w", distance: 20})
+	.draggable({ axis: "x", distance: 20});
+  });
+  $(function() {
+    $( "#resizable1" )
+	.resizable({handles: "e, w", distance: 20})
+	.draggable({ axis: "x", distance: 20});
+  });
+  </script>
+</head>
+    
+<body>
+    <div id="header">
+        <button class="headerNavButton ui-button">Remote</button>
+        <h1 id="pageTitle">Schedule Device</h1>
+    </div>
+    <div id="leftcolumn">
+        <div id="weekrow"></div>
+        <div id="weekrow"></div>
+            <div id="resizable" class="ui-widget-content">
+                <h3 class="ui-widget-header">Resizable</h3>
+            </div>
+        <div id="weekrow"></div>
+        <div id="weekrow"></div>
+            <div id="resizable1" class="ui-widget-content">
+                <h3 class="ui-widget-header">Resizable</h3>
+            </div>
+        <div id="weekrow"></div>
+        <div id="weekrow"></div>
+        <div id="weekrow"></div>
+    </div>
+<div id="rightcolumn"><p>text goes here</p>
+</div>
+ 
+</body>
+</html>
