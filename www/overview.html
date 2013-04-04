@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>jQuery UI Resizable - Default functionality</title>
+    <link rel="stylesheet" type="text/css" href="jquery/css/ui-lightness/jquery-ui-1.10.2.custom.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script  src="jquery/js/jquery-1.9.1.js"></script>
+    <script  src="jquery/js/jquery-ui-1.10.2.custom.js"></script>
+    <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
+    <style>
+        #resizable { width: 80px; height: 80px; padding: 0.0em; }
+        #resizable h3 { text-align: center; margin: 0; }
+
+        #resizable1 { width: 80px; height: 80px; padding: 0.0em; }
+        #resizable1 h3 { text-align: center; margin: 0; }
+
+        
+		.device { height:130px; width:100%; background-color: #AAAAAA; border-radius: 5px;  padding: 10px 3px 10px 3px; box-sizing:border-box; margin: 10px 0px; box-shadow:1px 1px 5px #555555;}
+		.device > div { /*background-color: #555555;*/ margin: 3px; height: 12px; position: relative; }
+		.hours { background-color: #00FF00; position: absolute; border-radius:3px; box-shadow:1px 1px 5px #555555;}
+		.day { display: inline-block; width: 80px; float: left; font-size: 10px; height: 12px; box-shadow:1px 1px 5px #555555;}
+		body {width:1024px; height:768px;}
+    </style>
+    <script>
+        $(function() {
+            $( "input[type=submit], a, button" )
+                .button()
+                .click(function( event ) {
+                event.preventDefault();
+                window.location = "index.html";
+            });
+        });
+    </script>
+</head>
+    
+<body>
+    <div id="header">
+        <button class="headerNavButton ui-button">Remote</button>
+        <h1 id="pageTitle" >Schedule Device</h1>
+    </div>
+    <div id="leftcolumn">
+        <div class="device">
+			<div class="monday">
+				<div class="day">Monday</div>
+				<div class="hours" style="width:10px; height:12px; left:100px;"></div>
+				<div class="hours" style="width:100px; height:12px; left:200px;"></div>
+				<div class="hours" style="width:300px; height:12px; left:400px;"></div>
+			</div>
+			<div class="tuesday">
+				<div class="day">Tuesday</div>
+				<div class="hours" style="width:10px; height:12px; left:200px;"></div>
+				<div class="hours" style="width:100px; height:12px; left:300px;"></div>
+				<div class="hours" style="width:300px; height:12px; left:500px;"></div>
+			</div>
+			<div class="wednesday">
+				<div class="day">Wednesday</div>
+				<div class="hours" style="width:10px; height:12px; left:200px;"></div>
+				<div class="hours" style="width:100px; height:12px; left:300px;"></div>
+				<div class="hours" style="width:300px; height:12px; left:500px;"></div>
+			</div>
+			<div class="thursday">
+				<div class="day">Thursday</div>
+				<div class="hours" style="width:10px; height:12px; left:200px;"></div>
+				<div class="hours" style="width:100px; height:12px; left:300px;"></div>
+				<div class="hours" style="width:300px; height:12px; left:500px;"></div>
+			</div>
+			<div class="friday">
+				<div class="day">Friday</div>
+				<div class="hours" style="width:10px; height:12px; left:200px;"></div>
+				<div class="hours" style="width:100px; height:12px; left:300px;"></div>
+				<div class="hours" style="width:300px; height:12px; left:500px;"></div>
+			</div>
+			<div class="saturday">
+				<div class="day">Saturday</div>
+				<div class="hours" style="width:10px; height:12px; left:200px;"></div>
+				<div class="hours" style="width:100px; height:12px; left:300px;"></div>
+				<div class="hours" style="width:300px; height:12px; left:500px;"></div>
+			</div>
+			<div class="sunday">
+				<div class="day">Sunday</div>
+				<div class="hours" style="width:10px; height:12px; left:200px;"></div>
+				<div class="hours" style="width:100px; height:12px; left:300px;"></div>
+				<div class="hours" style="width:300px; height:12px; left:500px;"></div>
+			</div>
+        </div>
+		
+		<div class="device">
+			<div class="monday">
+				<div class="day">Monday</div>
+				<div class="hours" style="width:10px; height:12px; left:100px;"></div>
+				<div class="hours" style="width:100px; height:12px; left:200px;"></div>
+				<div class="hours" style="width:300px; height:12px; left:400px;"></div>
+			</div>
+			<div class="tuesday">
+				<div class="day">Tuesday</div>
+				<div></div>
+			</div>
+			<div class="wednesday">
+				<div class="day">Wednesday</div>
+			</div>
+			<div class="thursday">
+				<div class="day">Thursday</div>
+			</div>
+			<div class="friday">
+				<div class="day">Friday</div>
+			</div>
+			<div class="saturday">
+				<div class="day">Saturday</div>
+			</div>
+			<div class="sunday">
+				<div class="day">Sunday</div>
+			</div>
+        </div>
+		
+		<div class="device">
+			<div class="monday">
+				<div class="day">Monday</div>
+				<div class="hours" style="width:10px; height:12px; left:100px;"></div>
+				<div class="hours" style="width:100px; height:12px; left:200px;"></div>
+				<div class="hours" style="width:300px; height:12px; left:400px;"></div>
+			</div>
+			<div class="tuesday">
+				<div class="day">Tuesday</div>
+				<div></div>
+			</div>
+			<div class="wednesday">
+				<div class="day">Wednesday</div>
+			</div>
+			<div class="thursday">
+				<div class="day">Thursday</div>
+			</div>
+			<div class="friday">
+				<div class="day">Friday</div>
+			</div>
+			<div class="saturday">
+				<div class="day">Saturday</div>
+			</div>
+			<div class="sunday">
+				<div class="day">Sunday</div>
+			</div>
+        </div>
+	</div>
+    <div id="rightcolumn"><p>text goes here</p>
+</div>
+ 
+</body>
+</html>
