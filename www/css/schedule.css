@@ -1,3 +1,102 @@
+.clearfix:after { 
+    content: " ";
+    display: block; 
+    height: 0; 
+    clear: both;
+}
+
+#maincontent {
+    text-align: inherit;
+}
+
+#leftSchedulePane {
+}
+
+#deviceHeader {
+}
+
+#deviceInfo {
+    float: left;
+}
+
+#deviceImage {
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+#deviceName {
+    font-size: 40px;
+}
+
+#deviceLocation {
+    font-size: 24px;
+}
+
+#scheduleTimeBar {
+    width: 700px;
+    border-top: 1px solid rgba(0,0,0,.6);
+    border-bottom: 1px solid rgba(0,0,0,.6);
+}
+
+.timeBarHour {
+    position: relative;
+    float: left;
+    width: 4.16666666666%;
+    height: 30px;
+    font-size: 10px;
+    background-color: rgb(252,252,252);
+}
+
+.timeBarText {
+    padding-top: 3px;
+    padding-left: 3px;
+}
+
+.tallHourMark {
+    position: absolute;
+    left: 0px;
+    top: 18px;
+    width: 2px;
+    height: 12px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.shortHourMark {
+    position: absolute;
+    left: 0px;
+    top: 22px;
+    width: 2px;
+    height: 8px;
+    background-color: rgba(0,0,0,.3);
+}
+
+.timeBarNight {
+    background-color: rgb(220,220,220);
+}
+
+.dayRow {
+    clear: both;
+}
+
+.dayNameBox {
+    float: left;
+    width: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 40px;
+}
+
+.dayRowSchedule {
+    
+}
+
+#rightAddingPane {
+    float: right;
+    width: 160px;
+}
 
 #resizable { width: 80px; height: 80px; padding: 0.0em; }
 #resizable h3 { text-align: center; margin: 0; }
