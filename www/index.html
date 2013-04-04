@@ -35,7 +35,8 @@
         <script type="text/javascript">
             $(function() {
                 $( "#sortable" ).sortable({
-                    revert: true
+                    revert: true,
+					placeholder: "ui-state-highlight"
                 });
                 $( "#draggable" ).draggable({
                     connectToSortable: "#sortable",
