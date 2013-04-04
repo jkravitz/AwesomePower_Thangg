@@ -42,6 +42,7 @@ body {
     margin:0px;
     padding:0px;
     width:100%;
+    overflow: none;
 }
 
 #header {
@@ -62,6 +63,7 @@ body {
 }
 
 #maincontent {
+    padding: 5px;
     text-align: center;
 	font-size: 26px;
 }
