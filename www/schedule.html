@@ -2,23 +2,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no" />
-    <title>jQuery UI Resizable - Default functionality</title>
+    <title>Schedule Overview</title>
     <link rel="stylesheet" type="text/css" href="jquery/css/ui-lightness/jquery-ui-1.10.2.custom.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/schedule.css" />
     <script  src="jquery/js/jquery-1.9.1.js"></script>
     <script  src="jquery/js/jquery-ui-1.10.2.custom.js"></script>
     <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
-    <style>
-        #resizable { width: 80px; height: 80px; padding: 0.0em; }
-        #resizable h3 { text-align: center; margin: 0; }
-
-        #resizable1 { width: 80px; height: 80px; padding: 0.0em; }
-        #resizable1 h3 { text-align: center; margin: 0; }
-
-        #leftcolumn { width: 924px; height: 750; border: 1px solid red; float: left}
-        #rightcolumn { width: 100px; height: 750; border: 1px solid red; float: left}
-        #weekrow { height:80; border: 1px solid red; }
-    </style>
     <script>
         $(function() {
             $( "#resizable" )
@@ -38,6 +28,9 @@
                 window.location = "index.html";
             });
         });
+        $(function() {
+            $( "body" ).width($(window).width()).height($(window).height());
+        });
     </script>
 </head>
     
@@ -46,6 +39,46 @@
         <button class="headerNavButton ui-button">Remote</button>
         <h1 id="pageTitle">Schedule Device</h1>
     </div>
+    
+    
+    <div id="maincontent">
+        <div id="leftSchedulePane">
+            <div id="itemHeader">
+            </div>
+            <div class="dayRow">
+                <div class="dayNameBox">Mon</div>
+                <div class="dayRowSchedule"></div>
+            </div>
+            <div id="dayRow">
+                <div class="dayNameBox">Tue</div>
+                <div class="dayRowSchedule"></div>
+            </div>
+            <div id="dayRow">
+            </div>
+            <div id="dayRow">
+            </div>
+            <div id="dayRow">
+            </div>
+            <div id="dayRow">
+            </div>
+            <div id="dayRow">
+            </div>
+        </div>
+        <div id="rightAddingPane">
+            <!-- stuff -->
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div id="leftcolumn">
         <div id="weekrow"></div>
         <div id="weekrow"></div>

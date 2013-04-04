@@ -1,0 +1,10 @@
+
+#resizable { width: 80px; height: 80px; padding: 0.0em; }
+#resizable h3 { text-align: center; margin: 0; }
+
+#resizable1 { width: 80px; height: 80px; padding: 0.0em; }
+#resizable1 h3 { text-align: center; margin: 0; }
+
+#leftcolumn { width: 924px; height: 750; border: 1px solid red; float: left}
+#rightcolumn { width: 100px; height: 750; border: 1px solid red; float: left}
+#weekrow { height:80; border: 1px solid red; }
