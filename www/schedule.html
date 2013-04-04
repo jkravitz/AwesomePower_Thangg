@@ -1,35 +1,44 @@
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>jQuery UI Resizable - Default functionality</title>
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css" />
-  <style>
-  #resizable { width: 80px; height: 80px; padding: 0.0em; }
-  #resizable h3 { text-align: center; margin: 0; }
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>jQuery UI Resizable - Default functionality</title>
+    <link rel="stylesheet" type="text/css" href="jquery/css/ui-lightness/jquery-ui-1.10.2.custom.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script  src="jquery/js/jquery-1.9.1.js"></script>
+    <script  src="jquery/js/jquery-ui-1.10.2.custom.js"></script>
+    <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
+    <style>
+        #resizable { width: 80px; height: 80px; padding: 0.0em; }
+        #resizable h3 { text-align: center; margin: 0; }
 
-  #resizable1 { width: 80px; height: 80px; padding: 0.0em; }
-  #resizable1 h3 { text-align: center; margin: 0; }
+        #resizable1 { width: 80px; height: 80px; padding: 0.0em; }
+        #resizable1 h3 { text-align: center; margin: 0; }
 
-  #leftcolumn { width: 924px; height:750; border: 1px solid red; float: left}
-  #rightcolumn { width: 100px; height:750; border: 1px solid red; float: left}
-#weekrow { height:80; border: 1px solid red; }
-  </style>
-  <script>
-  $(function() {
-    $( "#resizable" )
-	.resizable({handles: "e, w", distance: 20})
-	.draggable({ axis: "x", distance: 20});
-  });
-  $(function() {
-    $( "#resizable1" )
-	.resizable({handles: "e, w", distance: 20})
-	.draggable({ axis: "x", distance: 20});
-  });
-  </script>
+        #leftcolumn { width: 924px; height:750; border: 1px solid red; float: left}
+        #rightcolumn { width: 100px; height:750; border: 1px solid red; float: left}
+        #weekrow { height:80; border: 1px solid red; }
+    </style>
+    <script>
+        $(function() {
+            $( "#resizable" )
+            .resizable({handles: "e, w", distance: 20})
+            .draggable({ axis: "x", distance: 20});
+        });
+        $(function() {
+            $( "#resizable1" )
+            .resizable({handles: "e, w", distance: 20})
+            .draggable({ axis: "x", distance: 20});
+        });
+        $(function() {
+            $( "input[type=submit], a, button" )
+                .button()
+                .click(function( event ) {
+                event.preventDefault();
+                window.location = "index.html";
+            });
+        });
+    </script>
 </head>
     
 <body>
@@ -52,7 +61,7 @@
         <div id="weekrow"></div>
         <div id="weekrow"></div>
     </div>
-<div id="rightcolumn"><p>text goes here</p>
+    <div id="rightcolumn"><p>text goes here</p>
 </div>
  
 </body>
