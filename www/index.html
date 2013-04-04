@@ -33,6 +33,13 @@
             li { margin: 5px; padding: 5px; width: 150px; height: 100px; float:left }
 		</style>
         <script type="text/javascript">
+            window.addEventListener('load', function() {
+                document.body.addEventListener('touchmove', function(e) {
+                    e.preventDefault();
+                }, false);
+            }, false);
+        </script>        
+        <script type="text/javascript">
             $(function() {
 				$( "body" ).width($(window).width()).height($(window).height());
                 $( "#sortable" ).sortable({
@@ -53,6 +60,7 @@
                     window.location = "schedule.html";
                 });
             });
+
         </script>
     </head>
 
