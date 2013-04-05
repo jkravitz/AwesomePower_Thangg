@@ -49,7 +49,7 @@ body {
     min-height: 35px;
     margin: 0px;
     padding: 10px;
-    background-color:#2D8AEF;
+    /*background-color:#2D8AEF;
     background-image:linear-gradient(top, #5DBFFF 0%, #2D8AEF 51%);
     background-image:-webkit-linear-gradient(top, #5DBFFF 0%, #2D8AEF 51%);
     background-image:-ms-linear-gradient(top, #5DBFFF 0%, #2D8AEF 51%);
@@ -59,7 +59,10 @@ body {
         left bottom,
         color-stop(0, #5DBFFF),
         color-stop(0.51, #2D8AEF)
-    );
+    );*/
+	
+	background-color: rgba(0,0,0,0.3);
+	border-bottom: 1px dashed rgba(210,210,255,0.8);
 }
 
 #maincontent {
@@ -87,7 +90,7 @@ body {
 
 #pageTitle {
     font-size: 35px;
-    color: white;
+    color: rgba(255,255,255,0.9);
     text-shadow: rgba(0,0,0,128) 0 0 0.2em;
 }
 
