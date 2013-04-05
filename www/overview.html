@@ -9,90 +9,12 @@
     <script  src="jquery/js/jquery-ui-1.10.2.custom.js"></script>
     <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
     <style>
-        #resizable { width: 80px; height: 80px; padding: 0.0em; }
-        #resizable h3 { text-align: center; margin: 0; }
-
-        #resizable1 { width: 80px; height: 80px; padding: 0.0em; }
-        #resizable1 h3 { text-align: center; margin: 0; }
-
+        
 		#leftcolumn {
 			padding: 0px 10px;
 		}
-        body {
-			background-image:url('img/grey_wash_wall.png');
-			background-color: transparent;
-		}
 		
-		.device { 
-			height:140px; 
-			width:98%; 
-			background-color: rgba(210,210,255,0.5); 
-			border-radius: 5px;  
-			padding: 6px 1%; 
-			margin: 10px 0px; 
-			box-shadow:1px 1px 5px #555555;
-		}
-		.deviceImage {
-			width: 10%;
-			background-color: white;
-			height: 100%;
-			float: left;
-		}
-		.deviceSchedule {
-			width: 90%;
-			float: left;
-		}
 		
-		.deviceSchedule > div { 
-			//background-color: #555555;
-			margin: 0px 1%;
-			padding: 3px;
-			height: 12px; 
-			position: relative; 
-			width: 98%;
-			/*box-shadow:1px 1px 5px #555555;*/ 
-			border-radius: 2px;
-		}
-		
-		.deviceSchedule > div:nth-child(odd) { 
-			background-color: rgba(210,210,255,0.5);
-			box-shadow:1px 1px rgba(0,0,0,0.1);
-		}
-		
-		.deviceSchedule > div:nth-child(even) { 
-			
-		}
-		
-		.day { 
-			display: inline-block;
-			width: 10%; 
-			float: left; 
-			font-size: 10px; 
-			height: 12px; 
-			margin-left: 5px;
-		}
-		.time { 
-			float: left; 
-			position: relative;
-		}
-		.time > div {
-			background-color: rgba(248,255,107,0.4); 
-			border-radius:3px; 
-			height: 18px;
-			position: absolute;
-			border-right: 1px solid #555555; 
-			border-left: 1px solid #555555;
-			/*box-shadow:1px 1px 5px #555555;*/ 
-			top: -3px;
-		}
-		.monday > .hours { background-color: #FFFF00;}
-		.tuesday > .hours { background-color: #FF00FF;}
-		.wednesday > .hours { background-color: #00FF00;}
-		.thursday > .hours { background-color: #00FFFF;}
-		.friday > .hours { background-color: #0000FF;}
-		.saturday > .hours { background-color: #F0000F;}
-		.sunday > .hours { background-color: #550088;}
-		body {width:1024px; height:768px;}
     </style>
     <script>
         $(function() {
@@ -106,7 +28,7 @@
     </script>
 </head>
     
-<body>
+<body class="overview">
     <div id="header">
         <button class="headerNavButton ui-button">Remote</button>
         <h1 id="pageTitle" >Schedules</h1>
@@ -164,65 +86,8 @@
 					<div class="hours" style="width:300px;  left:500px;"></div>
 				</div>
 			</div>
-		</div>		
-		<div class="device">
-			<div class="monday">
-				<div class="day">Monday</div>
-				<div class="hours" style="width:10px;  left:100px;"></div>
-				<div class="hours" style="width:100px;  left:200px;"></div>
-				<div class="hours" style="width:300px;  left:400px;"></div>
-			</div>
-			<div class="tuesday">
-				<div class="day">Tuesday</div>
-				<div></div>
-			</div>
-			<div class="wednesday">
-				<div class="day">Wednesday</div>
-			</div>
-			<div class="thursday">
-				<div class="day">Thursday</div>
-			</div>
-			<div class="friday">
-				<div class="day">Friday</div>
-			</div>
-			<div class="saturday">
-				<div class="day">Saturday</div>
-			</div>
-			<div class="sunday">
-				<div class="day">Sunday</div>
-			</div>
-        </div>
-		
-		<div class="device">
-			<div class="monday">
-				<div class="day">Monday</div>
-				<div class="hours" style="width:10px;  left:100px;"></div>
-				<div class="hours" style="width:100px;  left:200px;"></div>
-				<div class="hours" style="width:300px;  left:400px;"></div>
-			</div>
-			<div class="tuesday">
-				<div class="day">Tuesday</div>
-				<div></div>
-			</div>
-			<div class="wednesday">
-				<div class="day">Wednesday</div>
-			</div>
-			<div class="thursday">
-				<div class="day">Thursday</div>
-			</div>
-			<div class="friday">
-				<div class="day">Friday</div>
-			</div>
-			<div class="saturday">
-				<div class="day">Saturday</div>
-			</div>
-			<div class="sunday">
-				<div class="day">Sunday</div>
-			</div>
-        </div>
+		</div>
 	</div>
-    <div id="rightcolumn"><p>text goes here</p>
-</div>
  
 </body>
 </html>

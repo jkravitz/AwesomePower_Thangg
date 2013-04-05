@@ -24,7 +24,7 @@
 }
 
 body {
-    background-color:#FFA200;
+/*    background-color:#FFA200;
     background-image:linear-gradient(top, #FFA200 0%, #FFDEB3 51%);
     background-image:-webkit-linear-gradient(top, #FFA200 0%, #FFDEB3 51%);
     background-image:-ms-linear-gradient(top, #FFA200 0%, #FFDEB3 51%);
@@ -35,8 +35,10 @@ body {
         color-stop(0, #FFA200),
         color-stop(0.51, #FFDEB3)
     );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    background-attachment:fixed;*/
+	//background-attachment:fixed;
+	background-image:url('../img/grey_wash_wall.png');
+	font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     margin:0px;
     padding:0px;
@@ -144,3 +146,73 @@ h1 {
 }
 
 
+.device { 
+	height:140px; 
+	width:98%; 
+	background-color: rgba(210,210,255,0.5); 
+	border-radius: 5px;  
+	padding: 6px 1%; 
+	margin: 10px 0px; 
+	box-shadow:1px 1px 5px #555555;
+}
+.deviceImage {
+	width: 10%;
+	background-color: white;
+	height: 100%;
+	float: left;
+}
+.deviceSchedule {
+	width: 90%;
+	float: left;
+}
+
+.deviceSchedule > div { 
+	//background-color: #555555;
+	margin: 0px 1%;
+	padding: 3px;
+	height: 12px; 
+	position: relative; 
+	width: 98%;
+	/*box-shadow:1px 1px 5px #555555;*/ 
+	border-radius: 2px;
+}
+
+.deviceSchedule > div:nth-child(odd) { 
+	background-color: rgba(210,210,255,0.5);
+	box-shadow:1px 1px rgba(0,0,0,0.1);
+}
+
+.deviceSchedule > div:nth-child(even) { 
+	
+}
+
+.day { 
+	display: inline-block;
+	width: 10%; 
+	float: left; 
+	font-size: 10px; 
+	height: 12px; 
+	margin-left: 5px;
+}
+.time { 
+	float: left; 
+	position: relative;
+}
+.time > div {
+	background-color: rgba(248,255,107,0.4); 
+	border-radius:3px; 
+	height: 18px;
+	position: absolute;
+	border-right: 1px solid #555555; 
+	border-left: 1px solid #555555;
+	/*box-shadow:1px 1px 5px #555555;*/ 
+	top: -3px;
+}
+.monday > .hours { background-color: #FFFF00;}
+.tuesday > .hours { background-color: #FF00FF;}
+.wednesday > .hours { background-color: #00FF00;}
+	.thursday > .hours { background-color: #00FFFF;}
+	.friday > .hours { background-color: #0000FF;}
+	.saturday > .hours { background-color: #F0000F;}
+	.sunday > .hours { background-color: #550088;}
+		
