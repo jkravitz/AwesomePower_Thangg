@@ -14,7 +14,25 @@
 			padding: 0px 10px;
 		}
 		
+		.addSchedule {
+			position: fixed;
+			bottom: 0px;
+			width: 1024px;
+			background-color: rgba(0,0,0,0.3);
+			height: 10px;
+		}
 		
+		.addSchedule > img {
+				position: relative;
+				left: 50%;
+				top: -71px;
+				background-color: rgba(0,0,0,0.3);
+				height: 55px;
+				width: 55px;
+				border-top-left-radius: 7px;
+				border-top-right-radius: 7px;
+				padding: 8px;
+		}
     </style>
     <script>
         $(function() {
@@ -23,6 +41,14 @@
                 .click(function( event ) {
                 event.preventDefault();
                 window.location = "index.html";
+            });
+        });
+		
+		$(function() {
+            $( "#plusSchedule" )
+                .click(function( event ) {
+                event.preventDefault();
+                window.location = "chooseDevice.html";
             });
         });
     </script>
@@ -39,7 +65,7 @@
 				
 			</div>
 			<div class="deviceSchedule">
-				<div class="monday dayContainer">
+				<div class="monday">
 					<div class="day">Monday</div>
 					<div class="time">
 						<div style="width:10px;"></div>
@@ -57,36 +83,49 @@
 				</div>
 				<div class="wednesday">
 					<div class="day">Wednesday</div>
-					<div class="hours" style="width:10px;  left:200px;"></div>
-					<div class="hours" style="width:100px;  left:300px;"></div>
-					<div class="hours" style="width:300px;  left:500px;"></div>
+					<div class="time">
+						<div style="width:10px; left:100px;"></div>
+						<div style="width:100px;  left:150px;"></div>
+						<div style="width:300px;  left:300px;"></div>
+					</div>
 				</div>
 				<div class="thursday">
 					<div class="day">Thursday</div>
-					<div class="hours" style="width:10px;  left:200px;"></div>
-					<div class="hours" style="width:100px;  left:300px;"></div>
-					<div class="hours" style="width:300px;  left:500px;"></div>
+					<div class="time">
+						<div style="width:10px; left: 50px;"></div>
+						<div style="width:100px;  left:100px;"></div>
+						<div style="width:300px;  left:250px;"></div>
+					</div>
 				</div>
 				<div class="friday">
 					<div class="day">Friday</div>
-					<div class="hours" style="width:10px;  left:200px;"></div>
-					<div class="hours" style="width:100px;  left:300px;"></div>
-					<div class="hours" style="width:300px;  left:500px;"></div>
+					<div class="time">
+						<div style="width:10px;"></div>
+						<div style="width:100px;  left:50px;"></div>
+						<div style="width:300px;  left:200px;"></div>
+					</div>
 				</div>
 				<div class="saturday">
 					<div class="day">Saturday</div>
-					<div class="hours" style="width:10px;  left:200px;"></div>
-					<div class="hours" style="width:100px;  left:300px;"></div>
-					<div class="hours" style="width:300px;  left:500px;"></div>
+					<div class="time">
+						<div style="width:10px; left:100px;"></div>
+						<div style="width:100px;  left:150px;"></div>
+						<div style="width:300px;  left:300px;"></div>
+					</div>
 				</div>
 				<div class="sunday">
 					<div class="day">Sunday</div>
-					<div class="hours" style="width:10px;  left:200px;"></div>
-					<div class="hours" style="width:100px;  left:300px;"></div>
-					<div class="hours" style="width:300px;  left:500px;"></div>
+					<div class="time">
+						<div style="width:10px; left: 50px;"></div>
+						<div style="width:100px;  left:100px;"></div>
+						<div style="width:300px;  left:250px;"></div>
+					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="addSchedule">
+		<img src="img/plus.png" alt="plus" id="plusSchedule">
 	</div>
  
 </body>

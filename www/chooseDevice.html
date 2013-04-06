@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>jQuery UI Resizable - Default functionality</title>
+    <link rel="stylesheet" type="text/css" href="jquery/css/ui-lightness/jquery-ui-1.10.2.custom.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script  src="jquery/js/jquery-1.9.1.js"></script>
+    <script  src="jquery/js/jquery-ui-1.10.2.custom.js"></script>
+    <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
+    <style>
+        
+		#leftcolumn {
+			padding: 0px 10px;
+		}
+		
+		.addSchedule {
+			position: fixed;
+			bottom: 0px;
+			width: 1024px;
+			background-color: rgba(0,0,0,0.3);
+			height: 10px;
+		}
+		
+    </style>
+    <script>
+        $(function() {
+            $( "input[type=submit], a, button" )
+                .button()
+                .click(function( event ) {
+                event.preventDefault();
+                window.location = "overview.html";
+            });
+        });
+		
+		$(function() {
+            $( "#plusSchedule" )
+                .click(function( event ) {
+                event.preventDefault();
+                window.location = "chooseDevice.html";
+            });
+        });
+    </script>
+</head>
+    
+<body class="overview">
+    <div id="header">
+        <button class="headerNavButton ui-button">Back</button>
+        <h1 id="pageTitle" >Choose device to add schedule for</h1>
+    </div>
+    <div id="leftcolumn">
+        <div></div>
+		
+	</div>
+ 
+</body>
+</html>
