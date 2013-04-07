@@ -29,8 +29,29 @@
             });
         });
         $(function() {
-            $( "body" ).width($(window).width()).height($(window).height());
+            $( "#trashCanBox, .newScheduleTime" ).draggable();
+            $( "#trashCanBox" ).droppable({
+                accept: ".timeSlot",
+                activeClass: "ui-state-hover",
+                hoverClass: "ui-state-active",
+                drop: function (event, ui ) {
+                    $( this )
+                        .addClass( "ui-state-highlight" )
+                }
+            });
+            $( ".dayRowSchedule" ).droppable({
+                accept: ".newScheduleTime",
+                activeClass: "ui-state-hover",
+                hoverClass: "ui-state-active",
+                drop: function (event, ui ) {
+                    $( this )
+                        .addClass( "ui-state-highlight" )
+                }
+            });
         });
+        /*$(function() {
+            $( "body" ).width($(window).width()).height($(window).height());
+        });*/
     </script>
 </head>
     
@@ -77,38 +98,41 @@
                     </div>
                 </div>
             </div>
-            <div class="dayRow">
+            <div class="dayRow clearfix">
                 <div class="dayNameBox">Mon</div>
-                <div class="dayRowSchedule">foo</div>
+                <div class="dayRowSchedule"></div>
             </div>
-            <div class="dayRow">
+            <div class="dayRow clearfix">
                 <div class="dayNameBox">Tue</div>
                 <div class="dayRowSchedule"></div>
             </div>
-            <div class="dayRow">
+            <div class="dayRow clearfix">
                 <div class="dayNameBox">Wed</div>
                 <div class="dayRowSchedule"></div>
             </div>
-            <div class="dayRow">
+            <div class="dayRow clearfix">
                 <div class="dayNameBox">Thu</div>
                 <div class="dayRowSchedule"></div>
             </div>
-            <div class="dayRow">
+            <div class="dayRow clearfix">
                 <div class="dayNameBox">Fri</div>
                 <div class="dayRowSchedule"></div>
             </div>
-            <div class="dayRow">
+            <div class="dayRow clearfix">
                 <div class="dayNameBox">Sat</div>
                 <div class="dayRowSchedule"></div>
             </div>
-            <div class="dayRow">
+            <div class="dayRow clearfix">
                 <div class="dayNameBox">Sun</div>
                 <div class="dayRowSchedule"></div>
             </div>
         </div>
         <div id="rightAddingPane">
             <div id="trashCanBox">Trash</div>
-            <!-- stuff -->
+            <div id="turnOnBox" class="newScheduleTime">Turn on</div>
+            <div id="turnOffBox" class="newScheduleTime">Turn off</div>
+            <div id="turnOnThenOff" class="newScheduleTime">Turn on then off</div>
+            <div id="turnOffThenOn" class="newScheduleTime">Turn off then on</div>
         </div>
     </div>
     

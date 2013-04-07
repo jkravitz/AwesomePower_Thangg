@@ -12,6 +12,7 @@
 
 #maincontent {
     text-align: inherit;
+    padding-right: 0px;
 }
 
 #leftSchedulePane {
@@ -93,25 +94,33 @@
 }
 
 .dayRow {
-    clear: both;
+    height: 48px;
+    border-top: 1px dashed rgb(150,150,150);
 }
 
 .dayNameBox {
     float: left;
     width: 100px;
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 5px;
     font-size: 40px;
     font-family: "Calibri Light";
 }
 
 .dayRowSchedule {
-    border-top: 1px dashed gray;
+    float: left;
+    width: 699px;
+    height: 49px;
+    border-left: 1px dashed rgb(150,150,150);
 }
 
 #rightAddingPane {
     float: right;
-    width: 160px;
+    width: 175px;
+    padding: 5px;
+    background-color: rgba(255,255,255, .5);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 #resizable { width: 80px; height: 80px; padding: 0.0em; }
