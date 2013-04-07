@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Calibri Light";
+    src: url(../fonts/CalibriL.ttf);
+}
+
 .clearfix:after { 
     content: " ";
     display: block; 
@@ -10,6 +15,9 @@
 }
 
 #leftSchedulePane {
+    float: left;
+    border-radius: 5px;
+    background-color: rgba(255,255,255, 1);
 }
 
 #deviceHeader {
@@ -21,10 +29,13 @@
 
 #deviceImage {
     float: left;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
     margin-right: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 #deviceName {
@@ -33,12 +44,15 @@
 
 #deviceLocation {
     font-size: 24px;
+    color: rgb(60,60,60);
 }
 
 #scheduleTimeBar {
     width: 700px;
+    position: relative;
+    top: 5px;
     border-top: 1px solid rgba(0,0,0,.6);
-    border-bottom: 1px solid rgba(0,0,0,.6);
+    /*border-bottom: 1px solid rgba(0,0,0,.6);*/
 }
 
 .timeBarHour {
@@ -51,8 +65,9 @@
 }
 
 .timeBarText {
-    padding-top: 3px;
-    padding-left: 3px;
+    padding-top: 4px;
+    padding-left: 2px;
+    font-variant: small-caps;
 }
 
 .tallHourMark {
@@ -87,10 +102,11 @@
     margin-left: 20px;
     margin-right: 20px;
     font-size: 40px;
+    font-family: "Calibri Light";
 }
 
 .dayRowSchedule {
-    
+    border-top: 1px dashed gray;
 }
 
 #rightAddingPane {
