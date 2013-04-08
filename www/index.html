@@ -54,7 +54,7 @@
         </script>        
         <script type="text/javascript">
             $(function() {
-				
+				var isdragging = 0;
                 $( "#sortable" ).sortable({
                     revert: true,
 					placeholder: "ui-state-highlight",
@@ -78,10 +78,16 @@
                     event.preventDefault();
                     window.location = "overview.html";
                 });
-
+				$('.thumbnail').mousedown(function() {
+    				$('.thumbnail').mousemove(function(){
+       					isdragging = 1;
+    				});
+				});
 				$('.thumbnail').click(function() {
-					$(this).toggleClass("deviceon");
-					$(this).toggleClass("deviceoff");
+					if(isdragging == 0){
+						$(this).toggleClass("deviceon");
+						$(this).toggleClass("deviceoff");
+					}
 				});
 
             });
@@ -119,7 +125,7 @@
                     <li class="thumbnail ui-state-default deviceon">Item 2</li>
                     <li class="thumbnail ui-state-default deviceon">Item 3</li>
                     <li class="thumbnail ui-state-default deviceon">Item 4</li>
-                    <li class="thumbnail ui-state-default deviceon" >Item 5</li>
+                    <li class="thumbnail ui-state-default deviceon">Item 5</li>
                     <li class="thumbnail ui-state-default deviceon">Item 6</li>
                 </ul>
             </div>
