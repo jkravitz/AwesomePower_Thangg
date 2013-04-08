@@ -54,7 +54,6 @@
         </script>        
         <script type="text/javascript">
             $(function() {
-				var isdragging = 0;
                 $( "#sortable" ).sortable({
                     revert: true,
 					placeholder: "ui-state-highlight",
@@ -78,16 +77,9 @@
                     event.preventDefault();
                     window.location = "overview.html";
                 });
-				$('.thumbnail').mousedown(function() {
-    				$('.thumbnail').mousemove(function(){
-       					isdragging = 1;
-    				});
-				});
 				$('.thumbnail').click(function() {
-					if(isdragging == 0){
 						$(this).toggleClass("deviceon");
 						$(this).toggleClass("deviceoff");
-					}
 				});
 
             });
