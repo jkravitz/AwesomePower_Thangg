@@ -267,6 +267,7 @@ body {
 		float:left; 
 		padding:0px;
 		border-radius: 7px; 
+		margin-top:12px; 
 }
 
 .deviceon{
@@ -282,7 +283,7 @@ body {
 
 ul { 
  		list-style-type: none; 
-		margin: 0; 
+		margin: 1px; 
 		padding: 0; 
 }
 li { 
@@ -309,6 +310,9 @@ li {
 .ui-state-highlight{
 		margin-right:15px;
 		margin-bottom:15px;
+		background: rgba(179,194,196,0.5);
+		border-color:#B3C2C4; 
+		box-shadow:0 0 70px #B3C2C4;
 }
 
 .ui-state-highlight{
@@ -318,4 +322,10 @@ li {
 		float:left; 
 		padding:0px;
 		border-radius: 7px;
+}
+
+#maincontentremote{
+		padding:13px;
+		text-align: center;
+		font-size: 26px;
 }
