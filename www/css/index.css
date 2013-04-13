@@ -260,15 +260,7 @@ body {
 		border-top: 1px dashed rgba(210,210,255,0.8);		
 }
 
-.thumbnail{
-		width:12%; 
-		margin-left:5%; 
-		margin-bottom:5%; 
-		float:left; 
-		padding:0px;
-		border-radius: 7px; 
-		margin-top:12px; 
-}
+
 
 .deviceon{
 		border-color:#52CC29; 
@@ -283,7 +275,7 @@ body {
 
 ul { 
  		list-style-type: none; 
-		margin: 1px; 
+		margin: 0; 
 		padding: 0; 
 }
 li { 
@@ -307,24 +299,30 @@ li {
 		margin-right:15px; 
 		margin-bottom:15px;
 }
+
+.thumbnail{
+		width:12%; 
+		margin-left:5%; 
+		margin-bottom:5%; 
+		float:left; 
+		padding:0px;
+		border-radius: 7px; 
+		margin-top:12px; 
+}
+
 .ui-state-highlight{
-		margin-right:15px;
-		margin-bottom:15px;
+		width:12%; 
+		margin-left:5%; 
+		margin-bottom:5%; 
+		float:left; 
+		padding:0px;
+		border-radius: 7px; 
+		margin-top:12px; 
 		background: rgba(179,194,196,0.5);
 		border-color:#B3C2C4; 
 		box-shadow:0 0 70px #B3C2C4;
 }
 
-.ui-state-highlight{
-		width:12%;
-		margin-left:5%; 
-		margin-bottom:2%;
-		float:left; 
-		padding:0px;
-		border-radius: 7px;
-		margin-top:12px; 
-
-}
 
 #maincontentremote{
 		padding:13px;
