@@ -8,19 +8,19 @@
     <script  src="jquery/js/jquery-1.9.1.js"></script>
     <script  src="jquery/js/jquery-ui-1.10.2.custom.js"></script>
     <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
+	<script  src="./js/items.js"></script>
     <style>
         
 		#leftcolumn {
 			padding: 0px 10px;
 		}
-		
-		
+			
     </style>
     <script>
-        $(function() {
+		$(function() {
             $( ".remoteButton" )
                 .click(function( event ) {
-                event.preventDefault();
+				event.preventDefault();
                 window.location = "index.html";
             });
         });
@@ -37,10 +37,13 @@
             $( ".device" )
                 .click(function( event ) {
 				$(this).css("box-shadow","0px 0px 10px #fff");
+				
                 event.preventDefault();	
-                window.location = "schedule.html";
+				window.location = "schedule.html";
             });
         });
+		
+		
     </script>
 </head>
     
@@ -50,74 +53,69 @@
         <div class="midContainer"><h1 id="pageTitle" >Schedules</h1></div>
 		<div class="rightButton button remoteButton"><span>Remote</span></div>
     </div>
-    <div id="leftcolumn">
-        <div class="device" id="item1">
-			<div class="deviceImage">
-				
-			</div>
-			<div class="deviceSchedule">
-				<div class="monday">
-					<div class="day">Monday</div>
-					<div class="time">
-						<div style="width:10px;"></div>
-						<div style="width:100px;  left:50px;"></div>
-						<div style="width:300px;  left:200px;"></div>
-					</div>
-				</div>
-				<div class="tuesday">
-					<div class="day">Tuesday</div>
-					<div class="time">
-						<div style="width:10px;"></div>
-						<div style="width:100px;  left:50px;"></div>
-						<div style="width:300px;  left:200px;"></div>
-					</div>
-				</div>
-				<div class="wednesday">
-					<div class="day">Wednesday</div>
-					<div class="time">
-						<div style="width:10px; left:100px;"></div>
-						<div style="width:100px;  left:150px;"></div>
-						<div style="width:300px;  left:300px;"></div>
-					</div>
-				</div>
-				<div class="thursday">
-					<div class="day">Thursday</div>
-					<div class="time">
-						<div style="width:10px; left: 50px;"></div>
-						<div style="width:100px;  left:100px;"></div>
-						<div style="width:300px;  left:250px;"></div>
-					</div>
-				</div>
-				<div class="friday">
-					<div class="day">Friday</div>
-					<div class="time">
-						<div style="width:10px;"></div>
-						<div style="width:100px;  left:50px;"></div>
-						<div style="width:300px;  left:200px;"></div>
-					</div>
-				</div>
-				<div class="saturday">
-					<div class="day">Saturday</div>
-					<div class="time">
-						<div style="width:10px; left:100px;"></div>
-						<div style="width:100px;  left:150px;"></div>
-						<div style="width:300px;  left:300px;"></div>
-					</div>
-				</div>
-				<div class="sunday">
-					<div class="day">Sunday</div>
-					<div class="time">
-						<div style="width:10px; left: 50px;"></div>
-						<div style="width:100px;  left:100px;"></div>
-						<div style="width:300px;  left:250px;"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div id="leftcolumn"></div>
 	<div class="addSchedule">
 		<img src="img/plus.png" alt="plus" id="plusSchedule">
 	</div>
- 
+	
+	<script>
+		function timeStringToPercent(time) {
+			var patt1=/[^\.]/g;
+			var numArray = time.match(patt1);
+					
+			var hour = numArray[0] + "" + numArray[1];
+			var minute = numArray[2] + "" + numArray[3];
+			var totalMinutes = hour*60 + minute;
+					
+			return totalMinutes/1440;
+		}
+		
+		function capitalizeFirstLetter(string) {
+			return string.charAt(0).toUpperCase() + string.slice(1);
+		}
+		
+			
+		for (var item in items) {
+			var idItem = item;
+						
+			var createHTML = 
+			'<div class="device" id="'+idItem+'">'+
+				'<div class="deviceImage"></div>'+
+				'<div class="deviceSchedule">';
+				
+			for (var day in items[item].schedule) {
+				var classDay = day;
+				
+				createHTML = createHTML + 
+					'<div class="'+classDay+'">' + 
+						'<div class="day">'+
+							capitalizeFirstLetter(classDay) + 
+						'</div>' + 
+						'<div class="time">';
+			
+				for (var i=0;i<items[item].schedule[day].length;i = i+2) {
+					var begin = items[item].schedule[day][i];
+					var end = items[item].schedule[day][i+1];					
+					var startPercent = timeStringToPercent(begin);
+					var endPercent  = timeStringToPercent(end);						
+					var widthPercent = endPercent - startPercent;
+					
+					createHTML = createHTML + 
+						"<div style=\"width: "+widthPercent+"%; "+
+							"left: "+startPercent+"%; \"></div>";
+				}
+				
+				createHTML = createHTML + 
+					'</div></div>';
+			
+			}
+			createHTML = createHTML + 
+					'</div></div>';	
+
+			$("#leftcolumn").append(createHTML);
+		}
+				
+		
+	</script>
 </body>
 </html>
