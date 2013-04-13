@@ -13,20 +13,36 @@
 		#leftcolumn {
 			padding: 0px 10px;
 		}
-		
-		.addSchedule {
-			position: fixed;
-			bottom: 0px;
-			width: 1024px;
-			background-color: rgba(0,0,0,0.3);
-			height: 10px;
+		ul { 
+			list-style-type: none;
+			margin: 0;
+			padding: 0; 
 		}
+        li { 
+			margin: 5px 15px 5% 5%;
+			padding: 0px;
+			width: 12%;
+			height: 100px;
+			float : left;
+			border-radius: 7px;
+		}
+		#maincontent {
+			padding:15px;
+		}
+			
 		
     </style>
     <script>
         $(function() {
-            $( "input[type=submit], a, button" )
-                .button()
+            $( ".remoteButton" )
+                .click(function( event ) {
+                event.preventDefault();
+                window.location = "index.html";
+            });
+        });
+		
+		$(function() {
+            $( ".overviewButton" )
                 .click(function( event ) {
                 event.preventDefault();
                 window.location = "overview.html";
@@ -34,22 +50,33 @@
         });
 		
 		$(function() {
-            $( "#plusSchedule" )
+            $( ".ui-state-default" )
                 .click(function( event ) {
                 event.preventDefault();
-                window.location = "chooseDevice.html";
+                window.location = "schedule.html";
             });
         });
+		
     </script>
 </head>
     
 <body class="overview">
-    <div id="header">
-        <button class="headerNavButton ui-button">Back</button>
-        <h1 id="pageTitle" >Choose device to add schedule for</h1>
-    </div>
+   	<div id="header">
+				<div class="leftButton button overviewButton"><span>Back</span></div>
+				<div class="midContainer"><h1 id="pageTitle" >Choose device to add schedule for</h1></div>
+				<div class="rightButton button remoteButton"><span>Remote</span></div>
+			</div>
     <div id="leftcolumn">
-        <div></div>
+        <div id="maincontent" class="ui-widget ui-helper-clearfix">
+				<ul>
+                    <li class="ui-state-default">Item 1</li>
+                    <li class="ui-state-default">Item 2</li>
+                    <li class="ui-state-default">Item 3</li>
+                    <li class="ui-state-default">Item 4</li>
+                    <li class="ui-state-default">Item 5</li>
+                    <li class="ui-state-default">Item 6</li>
+                </ul>
+            </div>	
 		
 	</div>
  

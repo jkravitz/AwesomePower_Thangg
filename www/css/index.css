@@ -48,23 +48,54 @@ body {
 }
 
 #header {
-    min-height: 35px;
+    height: 55px;
     margin: 0px;
-    padding: 10px;
-    /*background-color:#2D8AEF;
-    background-image:linear-gradient(top, #5DBFFF 0%, #2D8AEF 51%);
-    background-image:-webkit-linear-gradient(top, #5DBFFF 0%, #2D8AEF 51%);
-    background-image:-ms-linear-gradient(top, #5DBFFF 0%, #2D8AEF 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #5DBFFF),
-        color-stop(0.51, #2D8AEF)
-    );*/
-	
+    padding: 0px;
 	background-color: rgba(0,0,0,0.3);
 	border-bottom: 1px dashed rgba(210,210,255,0.8);
+}
+
+#header .leftButton {
+	float: left;
+	border-right: 1px dashed rgba(210,210,255,0.8);
+}
+
+#header .midContainer {
+	float: left;
+	width: 60%;
+	text-align:center;
+	height: 100%;
+}
+
+#header .rightButton {
+	float: left;
+	border-left: 1px dashed rgba(210,210,255,0.8);
+}
+
+
+#header .button {
+	background-color: rgba(255,255,255,0.3);
+	height: 100%; 
+	width: 20%;
+	box-sizing:border-box;
+	text-align:center;
+}
+
+#header 	.button > span {
+	display: inline-block;
+	margin: 16px auto;
+	font-size: 20px;
+	color: rgba(255, 255, 255,0.8);
+	text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
+}	
+
+#header #pageTitle {
+    font-size: 35px;
+	display: inline-block;
+    color: rgba(255,255,255,0.9);
+    text-shadow: rgba(0,0,0,128) 0 0 0.2em;
+    font-weight:normal;
+	margin: 8px auto;
 }
 
 #maincontent {
@@ -85,30 +116,14 @@ body {
 	margin:0; 
 }
 
-.headerNavButton {
-    float: left;
-    position: absolute;
-}
 
-#pageTitle {
-    font-size: 35px;
-    color: rgba(255,255,255,0.9);
-    text-shadow: rgba(0,0,0,128) 0 0 0.2em;
-}
+
 
 /* Landscape layout (with min-width) */
 .app {
     background-position:left center;
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
 
 .status {
     background-color:#333333;
@@ -145,7 +160,6 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
-
 .device { 
 	height:140px; 
 	width:98%; 
@@ -153,7 +167,8 @@ h1 {
 	border-radius: 5px;  
 	padding: 6px 1%; 
 	margin: 10px 0px; 
-	box-shadow:1px 1px 5px #555555;
+	box-shadow:0px 0px 8px #222;
+	display: block;
 }
 .deviceImage {
 	width: 10%;
@@ -211,8 +226,30 @@ h1 {
 .monday > .hours { background-color: #FFFF00;}
 .tuesday > .hours { background-color: #FF00FF;}
 .wednesday > .hours { background-color: #00FF00;}
-	.thursday > .hours { background-color: #00FFFF;}
-	.friday > .hours { background-color: #0000FF;}
-	.saturday > .hours { background-color: #F0000F;}
-	.sunday > .hours { background-color: #550088;}
-		
+.thursday > .hours { background-color: #00FFFF;}
+.friday > .hours { background-color: #0000FF;}
+.saturday > .hours { background-color: #F0000F;}
+.sunday > .hours { background-color: #550088;}
+
+
+.addSchedule {
+	position: fixed;
+	bottom: 0px;
+	width: 1024px;
+	background-color: rgba(0,0,0,0.3);
+	height: 10px;
+}
+
+.addSchedule > img {
+		position: relative;
+		left: 50%;
+		top: -71px;
+		background-color: rgba(0,0,0,0.3);
+		height: 55px;
+		width: 55px;
+		border-top-left-radius: 7px;
+		border-top-right-radius: 7px;
+		padding: 8px;
+}
+
+

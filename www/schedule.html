@@ -21,8 +21,14 @@
             .draggable({ axis: "x", distance: 20});
         });
         $(function() {
-            $( "input[type=submit], a, button" )
-                .button()
+            $( "#overviewButton" )
+                .click(function( event ) {
+                event.preventDefault();
+                window.location = "overview.html";
+            });
+        });
+		$(function() {
+            $( "#remoteButton" )
                 .click(function( event ) {
                 event.preventDefault();
                 window.location = "index.html";
@@ -57,8 +63,9 @@
     
 <body>
     <div id="header">
-        <button class="headerNavButton ui-button">Remote</button>
-        <h1 id="pageTitle">Schedule Device</h1>
+		<div class="leftButton button" id="overviewButton"><span>Back</span></div>
+        <div class="midContainer"><h1 id="pageTitle" >Schedule Device</h1></div>
+		<div class="rightButton button" id="remoteButton"><span>Remote</span></div>
     </div>
     
     

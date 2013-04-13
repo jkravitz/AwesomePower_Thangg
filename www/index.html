@@ -65,14 +65,12 @@
                     revert: "invalid"
                 });
                 $( "ul, li" ).disableSelection();
-                $( ".schedule" )
-                    .button()
+                $( ".scheduleButton" )
                     .click(function( event ) {
                     event.preventDefault();
                     window.location = "schedule.html";
                 });
-				$( ".overview" )
-                    .button()
+				$( ".overviewButton" )
                     .click(function( event ) {
                     event.preventDefault();
                     window.location = "overview.html";
@@ -90,20 +88,11 @@
     <body>
     
         <div class="app">
-            <div id="header">
-            	<div id ="buttondiv1">
-               	  <button class=" schedule ui-button">
-                  	<span class="ui-button-text">Schedule </span>
-                  </button>
-                </div>
-              	<div id ="buttondiv2">
-                   <button class=" overview ui-button">
-                    <span class="ui-button-text">Overview </span>
-                   </button>
-              	</div>    
-              	<h1 id="pageTitle">Devices Overview</h1>
-                
-            </div>
+           	<div id="header">
+				<div class="leftButton button overviewButton"><span>Schedules</span></div>
+				<div class="midContainer"><h1 id="pageTitle" >Devices Overview</h1></div>
+				<div class="rightButton button scheduleButton"><span>temp. Schedule</span></div>
+			</div>
 
             <div id="maincontent" class="ui-widget ui-helper-clearfix">
                <!-- <ul>
