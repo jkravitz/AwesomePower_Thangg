@@ -27,7 +27,7 @@
                 window.location = "overview.html";
             });
         });
-		$(function() {
+        $(function() {
             $( "#remoteButton" )
                 .click(function( event ) {
                 event.preventDefault();
@@ -35,7 +35,9 @@
             });
         });
         $(function() {
-            $( "#trashCanBox, .newScheduleTime" ).draggable();
+            $( "#trashCanBox, .newScheduleTime" ).draggable({
+                containment: "document"
+            });
             $( "#trashCanBox" ).droppable({
                 accept: ".timeSlot",
                 activeClass: "ui-state-hover",
@@ -55,18 +57,15 @@
                 }
             });
         });
-        /*$(function() {
-            $( "body" ).width($(window).width()).height($(window).height());
-        });*/
     </script>
 </head>
     
 <body>
 
     <div id="header">
-		<div class="leftButton button" id="overviewButton"><span>Back</span></div>
+        <div class="leftButton button" id="overviewButton"><span>Back</span></div>
         <div class="midContainer"><h1 id="pageTitle" >Schedule Device</h1></div>
-		<div class="rightButton button" id="remoteButton"><span>Remote</span></div>
+        <div class="rightButton button" id="remoteButton"><span>Remote</span></div>
     </div>
     
     
@@ -153,7 +152,7 @@
     
     
     
-    
+    <!--
     <div id="leftcolumn">
         <div id="weekrow"></div>
         <div id="weekrow"></div>
@@ -169,8 +168,8 @@
         <div id="weekrow"></div>
         <div id="weekrow"></div>
     </div>
-    <div id="rightcolumn"><p>text goes here</p>
-</div>
+    <div id="rightcolumn"><p>text goes here</p></div>
+    -->
 
 </body>
 </html>
