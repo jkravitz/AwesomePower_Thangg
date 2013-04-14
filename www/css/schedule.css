@@ -12,17 +12,20 @@
 
 #maincontent {
     text-align: inherit;
-    padding-right: 0px;
-    background-color: rgba(200,200,200, .9);
+    background-color: rgba(200,200,200, .5);
 }
 
 #leftSchedulePane {
+    height: 712px;
     float: left;
     border-radius: 2px;
     background-color: rgba(255,255,255, .9);
 }
 
 #deviceHeader {
+    height: 110px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 #deviceInfo {
@@ -33,10 +36,7 @@
     float: left;
     width: 100px;
     height: 100px;
-    margin-top: 5px;
-    margin-left: 5px;
-    margin-bottom: 5px;
-    margin-right: 20px;
+    margin: 0px 15px 0px 0px;
     border-radius: 2px;
 }
 
@@ -50,7 +50,7 @@
 }
 
 #scheduleTimeBar {
-    width: 700px;
+    width: 731px;
     position: relative;
     top: 5px;
     border-top: 1px solid rgba(0,0,0,.6);
@@ -94,7 +94,7 @@
 }
 
 .dayRow {
-    height: 48px;
+    height: 84px;
     border-top: 1px dashed rgb(150,150,150);
 }
 
@@ -103,30 +103,34 @@
     width: 100px;
     margin-left: 20px;
     margin-right: 5px;
+    padding-top: 15px;
     font-size: 40px;
     font-family: "Calibri Light";
 }
 
 .dayRowSchedule {
     float: left;
-    width: 699px;
-    height: 49px;
+    width: 730px;
+    height: 84px;
     border-left: 1px dashed rgb(150,150,150);
 }
 
 #rightAddingPane {
     float: right;
-    width: 175px;
     height: 692px;
-    padding: 5px;
+    padding: 10px;
     background-color: rgba(255,255,255, .9);
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
+    border-radius: 2px;
 }
 
 .sidebarItem {
-    width: 160px;
-    height: 20%;
+    width: 118px;
+    height: 118px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid rgb(200,200,200);
+    border-radius: 4px;
+    background-color: white;
 }
 
 #resizable { width: 80px; height: 80px; padding: 0.0em; }

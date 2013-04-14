@@ -32,16 +32,19 @@
             });
         });
         $(function() {
-            $( "#trashCanBox, .newScheduleTime" ).draggable({
-                containment: "document"
+            $( "#trashCan, .newScheduleTime" ).draggable({
+                containment: "#maincontent",
+                helper: "clone"
             });
-            $( "#trashCanBox" ).droppable({
-                accept: ".timeSlot",
+            $( ".timeSlot" ).draggable({
+                containment: "#maincontent",
+                revert: "true"
+            });
+            $( "#trashCan" ).droppable({
                 activeClass: "ui-state-hover",
                 hoverClass: "ui-state-active",
                 drop: function (event, ui ) {
-                    $( this )
-                        .addClass( "ui-state-highlight" )
+                    $(event.toElement).remove()
                 }
             });
             $( ".dayRowSchedule" ).droppable({
@@ -49,8 +52,24 @@
                 activeClass: "ui-state-hover",
                 hoverClass: "ui-state-active",
                 drop: function (event, ui ) {
-                    $( this )
-                        .addClass( "ui-state-highlight" )
+                    switch(ui.helper.context.id) {
+                    case "turnOn":
+                        $(document.createElement('div'))
+                            .html("ON")
+                            .addClass("timeSlot").addClass("turnOnSlot")
+                            .width("50px")
+                            .appendTo(event.target)
+                            .draggable({
+                                revert: "invalid"
+                            });
+                        break;
+                    case "turnOff":
+                        break;
+                    case "turnOnThenOff":
+                        break;
+                    case "turnOffThenOn":
+                        break;
+                    }
                 }
             });
         });
@@ -132,11 +151,11 @@
             </div>
         </div>
         <div id="rightAddingPane">
-            <div id="trashCanBox" class="sidebarItem">Trash</div>
-            <div id="turnOnBox" class="sidebarItem newScheduleTime">Turn on</div>
-            <div id="turnOffBox" class="sidebarItem newScheduleTime">Turn off</div>
+            <div id="turnOn" class="sidebarItem newScheduleTime">Turn on</div>
+            <div id="turnOff" class="sidebarItem newScheduleTime">Turn off</div>
             <div id="turnOnThenOff" class="sidebarItem newScheduleTime">Turn on then off</div>
             <div id="turnOffThenOn" class="sidebarItem newScheduleTime">Turn off then on</div>
+            <div id="trashCan" class="sidebarItem">Trash</div>
         </div>
     </div>
     
