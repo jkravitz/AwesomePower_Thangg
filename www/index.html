@@ -39,7 +39,6 @@
         </script>        
         <script type="text/javascript">
 			
-			
             $(function() {
                 $( "#sortable" ).sortable({
                     revert: true,
@@ -61,9 +60,7 @@
                 });
 				$( ".overviewButton" )
                     .click(function( event ) {
-					
 					localStorage.items = JSON.stringify(items);				
-					
                     event.preventDefault();
                     window.location = "overview.html";
                 });
@@ -78,6 +75,12 @@
 						}
 				});
 				$(".addIcon").disableSelection();
+				$(".addIcon").click(function(){
+						//need to replace with more effective method
+						numItems++;
+						var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+'item'+numItems+ '>'+'Item '+ numItems+'</li>';
+					$("#sortable").prepend(createHTML);
+				});
 
             });
 
@@ -130,7 +133,6 @@
 					var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+idItem+'>'+items[item].name+'</li>';
 					$("#sortable").prepend(createHTML);
 				}
-				
 			}
 			
 		</script>

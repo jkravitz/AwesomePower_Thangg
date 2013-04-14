@@ -17,6 +17,7 @@
  * under the License.
  */ 
 
+var numItems =7;
 var items = getItems();
 
 function getItems() {
