@@ -71,22 +71,18 @@ body {
 	border-left: 1px dashed rgba(210,210,255,0.8);
 }
 
-
 #header .button {
 	background-color: rgba(255,255,255,0.3);
 	height: 100%; 
 	width: 20%;
 	box-sizing:border-box;
 	text-align:center;
-}
-
-#header 	.button > span {
-	display: inline-block;
-	margin: 16px auto;
+	padding: 16px 0;
 	font-size: 20px;
 	color: rgba(255, 255, 255,0.8);
 	text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
-}	
+    cursor: pointer; /* for use on a computer */
+}
 
 #header #pageTitle {
     font-size: 35px;

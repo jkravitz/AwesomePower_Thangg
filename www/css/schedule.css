@@ -13,12 +13,13 @@
 #maincontent {
     text-align: inherit;
     padding-right: 0px;
+    background-color: rgba(200,200,200, .9);
 }
 
 #leftSchedulePane {
     float: left;
     border-radius: 2px;
-    background-color: rgba(255,255,255, 1);
+    background-color: rgba(255,255,255, .9);
 }
 
 #deviceHeader {
@@ -53,13 +54,12 @@
     position: relative;
     top: 5px;
     border-top: 1px solid rgba(0,0,0,.6);
-    /*border-bottom: 1px solid rgba(0,0,0,.6);*/
 }
 
 .timeBarHour {
     position: relative;
     float: left;
-    width: 4.16666666666%;
+    width: 4.16666666666666666666666666666667%;
     height: 30px;
     font-size: 10px;
     background-color: rgb(252,252,252);
@@ -117,10 +117,16 @@
 #rightAddingPane {
     float: right;
     width: 175px;
+    height: 692px;
     padding: 5px;
-    background-color: rgba(255,255,255, .5);
+    background-color: rgba(255,255,255, .9);
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
+}
+
+.sidebarItem {
+    width: 160px;
+    height: 20%;
 }
 
 #resizable { width: 80px; height: 80px; padding: 0.0em; }
