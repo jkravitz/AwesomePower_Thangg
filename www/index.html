@@ -70,6 +70,12 @@
 				$('.thumbnail').click(function() {
 						$(this).toggleClass("deviceon");
 						$(this).toggleClass("deviceoff");
+						if($(this).hasClass("deviceon")){
+							items[$(this).id].status='on';
+						}
+						else{
+							items[$(this).id].status='off';
+						}
 				});
 				$(".addIcon").disableSelection();
 

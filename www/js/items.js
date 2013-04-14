@@ -81,7 +81,7 @@ function getItems() {
 									 sunday:[]
 									 }
 						},
-				 item6: {name : 'Item 6',
+				 item6: {name : 'Item 7',
 						 status : 'on', 
 						 image : "imageLink",
 						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
