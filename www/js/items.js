@@ -92,6 +92,18 @@ function getItems() {
 									 saturday:[], 
 									 sunday:[]
 									 }
+						},
+				item7: {name : 'Item 6',
+						 status : 'on', 
+						 image : "imageLink",
+						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
+									 tuesday: [], 
+									 wednesday:[], 
+									 thursday:[], 
+									 friday:[], 
+									 saturday:[], 
+									 sunday:[]
+									 }
 						}
 				};
 	} else {
