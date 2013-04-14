@@ -8,6 +8,7 @@
     <script  src="jquery/js/jquery-1.9.1.js"></script>
     <script  src="jquery/js/jquery-ui-1.10.2.custom.js"></script>
     <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
+	<script  src="./js/items.js"></script>
     <style>
         
 		#leftcolumn {
@@ -34,24 +35,15 @@
     </style>
     <script>
         $(function() {
-            $( ".remoteButton" )
-                .click(function( event ) {
+            $(document).on('click', '.remoteButton', function() {
                 event.preventDefault();
                 window.location = "index.html";
             });
-        });
-		
-		$(function() {
-            $( ".overviewButton" )
-                .click(function( event ) {
+            $(document).on('click', '.overviewButton', function() {
                 event.preventDefault();
                 window.location = "overview.html";
             });
-        });
-		
-		$(function() {
-            $( ".ui-state-default" )
-                .click(function( event ) {
+            $(document).on('click', '.ui-state-default', function() {
                 event.preventDefault();
                 window.location = "schedule.html";
             });
@@ -68,17 +60,21 @@
 			</div>
     <div id="leftcolumn">
         <div id="maincontent" class="ui-widget ui-helper-clearfix">
-				<ul>
-                    <li class="ui-state-default" id="item1">Item 1</li>
-                    <li class="ui-state-default" id="item1">Item 2</li>
-                    <li class="ui-state-default" id="item1">Item 3</li>
-                    <li class="ui-state-default" id="item1">Item 4</li>
-                    <li class="ui-state-default" id="item1">Item 5</li>
-                    <li class="ui-state-default" id="item1">Item 6</li>
+				<ul id="itemsList">
+ 
                 </ul>
             </div>	
 		
 	</div>
  
+	<script>
+			for (var item in items) {
+				var idItem = item;
+				if(items[item]){
+					var createHTML = '<li class="ui-state-default"'+'id='+idItem+'>'+items[item].name+'</li>';
+					$("#itemsList").prepend(createHTML);
+				}
+			}
+	</script>
 </body>
 </html>

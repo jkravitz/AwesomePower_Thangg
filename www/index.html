@@ -53,18 +53,19 @@
 					distance: 10
                 });
                 $( "ul, li" ).disableSelection();
-                $( ".scheduleButton" )
-                    .click(function( event ) {
+				
+                $(document).on('click', '.scheduleButton', function() {
                     event.preventDefault();
                     window.location = "schedule.html";
                 });
-				$( ".overviewButton" )
-                    .click(function( event ) {
+				
+				$(document).on('click', '.overviewButton', function() {
 					localStorage.items = JSON.stringify(items);				
                     event.preventDefault();
                     window.location = "overview.html";
                 });
-				$('.thumbnail').click(function() {
+				
+				$(document).on('click', '.thumbnail', function() {
 						$(this).toggleClass("deviceon");
 						$(this).toggleClass("deviceoff");
 						if($(this).hasClass("deviceon")){
@@ -74,16 +75,19 @@
 							items[this.id].status='off';
 						}
 				});
+				
 				$(".addIcon").disableSelection();
-				$(".addIcon").click(function(){
+				$(document).on('click', '.addIcon', function() {
 						//need to replace with more effective method
 						numItems++;
 						var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+'item'+numItems+ '>'+'Item '+ numItems+'</li>';
+						newItem('item'+numItems, 'Item '+numItems, 'imageLink');
 					$("#sortable").prepend(createHTML);
 				});
 
             });
-
+			
+			
         </script>
     </head>
 

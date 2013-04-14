@@ -18,26 +18,16 @@
     </style>
     <script>
 		$(function() {
-            $( ".remoteButton" )
-                .click(function( event ) {
+            $(document).on('click', '.remoteButton', function() {
 				event.preventDefault();
                 window.location = "index.html";
             });
-        });
-		
-		$(function() {
-            $( "#plusSchedule" )
-                .click(function( event ) {
+            $(document).on('click', '#plusSchedule', function() {
                 event.preventDefault();
                 window.location = "chooseDevice.html";
             });
-        });
-		
-		$(function() {
-            $( ".device" )
-                .click(function( event ) {
+            $(document).on('click', '.device', function() {
 				$(this).css("box-shadow","0px 0px 10px #fff");
-				
                 event.preventDefault();	
 				window.location = "schedule.html";
             });
@@ -77,42 +67,44 @@
 			
 		for (var item in items) {
 			var idItem = item;
-						
-			var createHTML = 
-			'<div class="device" id="'+idItem+'">'+
-				'<div class="deviceImage"></div>'+
-				'<div class="deviceSchedule">';
-				
-			for (var day in items[item].schedule) {
-				var classDay = day;
-				
-				createHTML = createHTML + 
-					'<div class="'+classDay+'">' + 
-						'<div class="day">'+
-							capitalizeFirstLetter(classDay) + 
-						'</div>' + 
-						'<div class="time">';
 			
-				for (var i=0;i<items[item].schedule[day].length;i = i+2) {
-					var begin = items[item].schedule[day][i];
-					var end = items[item].schedule[day][i+1];					
-					var startPercent = timeStringToPercent(begin);
-					var endPercent  = timeStringToPercent(end);						
-					var widthPercent = endPercent - startPercent;
+			if (items[item].hasSchedule == 'yes') {
+				var createHTML = 
+				'<div class="device" id="'+idItem+'">'+
+					'<div class="deviceImage"></div>'+
+					'<div class="deviceSchedule">';
+					
+				for (var day in items[item].schedule) {
+					var classDay = day;
 					
 					createHTML = createHTML + 
-						"<div style=\"width: "+widthPercent+"%; "+
-							"left: "+startPercent+"%; \"></div>";
-				}
+						'<div class="'+classDay+'">' + 
+							'<div class="day">'+
+								capitalizeFirstLetter(classDay) + 
+							'</div>' + 
+							'<div class="time">';
 				
+					for (var i=0;i<items[item].schedule[day].length;i = i+2) {
+						var begin = items[item].schedule[day][i];
+						var end = items[item].schedule[day][i+1];					
+						var startPercent = timeStringToPercent(begin);
+						var endPercent  = timeStringToPercent(end);						
+						var widthPercent = endPercent - startPercent;
+						
+						createHTML = createHTML + 
+							"<div style=\"width: "+widthPercent+"%; "+
+								"left: "+startPercent+"%; \"></div>";
+					}
+					
+					createHTML = createHTML + 
+						'</div></div>';
+				
+				}
 				createHTML = createHTML + 
-					'</div></div>';
-			
-			}
-			createHTML = createHTML + 
-					'</div></div>';	
+						'</div></div>';	
 
-			$("#leftcolumn").append(createHTML);
+				$("#leftcolumn").append(createHTML);
+			}
 		}
 				
 		

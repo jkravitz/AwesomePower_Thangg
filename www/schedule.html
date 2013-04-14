@@ -21,15 +21,12 @@
             .draggable({ axis: "x", distance: 20});
         });
         $(function() {
-            $( "#overviewButton" )
-                .click(function( event ) {
+            $(document).on('click', '#overviewButton', function() {
                 event.preventDefault();
                 window.location = "overview.html";
             });
-        });
-        $(function() {
-            $( "#remoteButton" )
-                .click(function( event ) {
+
+            $(document).on('click', '#remoteButton', function() {
                 event.preventDefault();
                 window.location = "index.html";
             });

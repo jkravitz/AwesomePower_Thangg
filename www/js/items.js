@@ -17,14 +17,15 @@
  * under the License.
  */ 
 
-var numItems =7;
 var items = getItems();
+var numItems = countItems();
 
 function getItems() {
 	if (localStorage.items == undefined) {
 		items = {item1: {name : 'Item 1',
 						 status : 'on', 
 						 image : "imageLink",
+						 hasSchedule : 'yes',
 						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
 									 tuesday: [], 
 									 wednesday:[], 
@@ -37,6 +38,7 @@ function getItems() {
 				 item2: {name : 'Item 2',
 						 status : 'on', 
 						 image : "imageLink",
+						 hasSchedule : 'yes',
 						 schedule : {monday: [],
 									 tuesday: ['09.00','13.00','16.00','23.00'], 
 									 wednesday:[], 
@@ -49,6 +51,7 @@ function getItems() {
 				 item3: {name : 'Item 3',
 						 status : 'on', 
 						 image : "imageLink",
+						 hasSchedule : 'yes',
 						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
 									 tuesday: [], 
 									 wednesday:[], 
@@ -61,6 +64,7 @@ function getItems() {
 				 item4: {name : 'Item 4',
 						 status : 'on', 
 						 image : "imageLink",
+						 hasSchedule : 'yes',
 						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
 									 tuesday: [], 
 									 wednesday:[], 
@@ -73,6 +77,7 @@ function getItems() {
 				 item5: {name : 'Item 5',
 						 status : 'on', 
 						 image : "imageLink",
+						 hasSchedule : 'yes',
 						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
 									 tuesday: [], 
 									 wednesday:[], 
@@ -82,9 +87,10 @@ function getItems() {
 									 sunday:[]
 									 }
 						},
-				 item6: {name : 'Item 7',
+				 item6: {name : 'Item 6',
 						 status : 'on', 
 						 image : "imageLink",
+						 hasSchedule : 'yes',
 						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
 									 tuesday: [], 
 									 wednesday:[], 
@@ -94,9 +100,10 @@ function getItems() {
 									 sunday:[]
 									 }
 						},
-				item7: {name : 'Item 6',
+				item7: {name : 'Item 7',
 						 status : 'on', 
 						 image : "imageLink",
+						 hasSchedule : 'yes',
 						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
 									 tuesday: [], 
 									 wednesday:[], 
@@ -112,6 +119,35 @@ function getItems() {
 	}
 	
 	return items;
+}
+
+function countItems() {
+	var size = 0, key;
+    for (key in items) {
+        if (items.hasOwnProperty(key)) size++;
+    }
+    return size;
+}
+
+function newItem(id, itemName, imageLink) {
+	items[id] = {name : itemName,
+				status : 'off', 
+				image : imageLink,
+				hasSchedule : 'no',
+				schedule : {monday: [],
+							tuesday: [], 
+							wednesday:[], 
+							thursday:[], 
+							friday:[], 
+							saturday:[], 
+							sunday:[]
+							}
+				};
+	
+}
+
+function removeItem(id) {
+	delete items[id];
 }
 
 
