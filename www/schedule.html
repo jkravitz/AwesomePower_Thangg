@@ -32,9 +32,12 @@
             });
         });
         $(function() {
-            $( "#trashCan, .newScheduleTime" ).draggable({
-                containment: "#maincontent",
-                helper: "clone"
+            $( ".newScheduleTime" ).draggable({
+                containment: "body",
+                helper: "clone",
+                opacity: 0.8,
+                distance: 0,
+                cursorAt: {top: 59, left: 59}
             });
             $( ".timeSlot" ).draggable({
                 containment: "#maincontent",
@@ -86,7 +89,7 @@
     
     
     <div id="maincontent" class="clearfix">
-        <div id="leftSchedulePane">
+        <div id="leftSchedulePane" class="clearfix">
             <div id="deviceHeader" class="clearfix">
                 <image id="deviceImage" src="img/stock_lightbulb.jpg" />
                 <div id="deviceInfo">

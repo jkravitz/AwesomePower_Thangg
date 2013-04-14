@@ -41,10 +41,11 @@
 			
             $(function() {
                 $( "#sortable" ).sortable({
-                    revert: true,
+                    revert: "valid",
 					placeholder: "ui-state-highlight allremoteitems",
                     containment: "document",
-					items: "li:not(.addIcon)"
+					items: "li:not(.addIcon)",
+                    delay: 200
                 });
                 $( "#draggable" ).draggable({
                     connectToSortable: "#sortable",

@@ -95,7 +95,7 @@
 
 .dayRow {
     height: 84px;
-    border-top: 1px dashed rgb(150,150,150);
+    border-top: 1px solid rgb(150,150,150);
 }
 
 .dayNameBox {
@@ -104,7 +104,7 @@
     margin-left: 20px;
     margin-right: 5px;
     padding-top: 15px;
-    font-size: 40px;
+    font-size: 42px;
     font-family: "Calibri Light";
 }
 
@@ -112,7 +112,7 @@
     float: left;
     width: 730px;
     height: 84px;
-    border-left: 1px dashed rgb(150,150,150);
+    border-left: 1px solid rgb(150,150,150);
 }
 
 #rightAddingPane {
