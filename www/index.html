@@ -81,8 +81,10 @@
 				$(document).on('click', '.addIcon', function() {
 						//need to replace with more effective method
 						numItems++;
-						var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+'item'+numItems+ '>'+'Item '+ numItems+'</li>';
-						newItem('item'+numItems, 'Item '+numItems, 'imageLink');
+						var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+'item'+numItems+ '>'+
+											'<span>'+'Item '+ numItems+'</span><img src="'+items[item].image+'" /></li>';
+						
+						newItem('item'+numItems, 'Item '+numItems, 'img/websiteIcon.png');
 					$("#sortable").prepend(createHTML);
 				});
 
@@ -131,11 +133,13 @@
 			for (var item in items) {
 				var idItem = item;
 				if(items[item].status=='on'){
-					var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceon "'+'id='+idItem+'>'+items[item].name+'</li>';
+					var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceon "'+'id='+idItem+'>'+
+										'<span>'+items[item].name+'</span><img src="'+items[item].image+'" /></li>';
 					$("#sortable").prepend(createHTML);
 				}
 				else{
-					var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+idItem+'>'+items[item].name+'</li>';
+					var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+idItem+'>'+
+										'<span>'+items[item].name+'</span><img src="'+items[item].image+'" /></li>';
 					$("#sortable").prepend(createHTML);
 				}
 			}

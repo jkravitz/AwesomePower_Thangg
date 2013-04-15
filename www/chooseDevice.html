@@ -71,7 +71,8 @@
 			for (var item in items) {
 				var idItem = item;
 				if(items[item]){
-					var createHTML = '<li class="ui-state-default"'+'id='+idItem+'>'+items[item].name+'</li>';
+					var createHTML = '<li class="ui-state-default"'+'id='+idItem+'>'+
+										'<span>'+items[item].name+'</span><img src="'+items[item].image+'" /></li>';
 					$("#itemsList").prepend(createHTML);
 				}
 			}

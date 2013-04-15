@@ -71,7 +71,7 @@
 			if (items[item].hasSchedule == 'yes') {
 				var createHTML = 
 				'<div class="device" id="'+idItem+'">'+
-					'<div class="deviceImage"></div>'+
+					'<div class="deviceImage"><span>'+items[item].name+'</span><img src="'+items[item].image+'" /></div>'+
 					'<div class="deviceSchedule">';
 					
 				for (var day in items[item].schedule) {

@@ -167,10 +167,20 @@ body {
 }
 .deviceImage {
 	width: 10%;
-	background-color: white;
 	height: 100%;
 	float: left;
 }
+
+.deviceImage > span {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.deviceImage > img {
+	margin: 5px 0px;
+	width: 100%;
+}
+
 .deviceSchedule {
 	width: 90%;
 	float: left;
@@ -295,6 +305,12 @@ li {
 .ui-state-default{
 		margin-right:15px; 
 		margin-bottom:15px;
+		background: none;
+		background-color: rgba(255,255,255,0.7);
+}
+
+.ui-state-default > img {
+	height: 65px;
 }
 
 .thumbnail{
