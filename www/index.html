@@ -57,12 +57,14 @@
 				
                 $(document).on('click', '.scheduleButton', function() {
                     event.preventDefault();
+					localStorage.prevPage = "index.html";
                     window.location = "schedule.html";
                 });
 				
 				$(document).on('click', '.overviewButton', function() {
 					localStorage.items = JSON.stringify(items);				
                     event.preventDefault();
+					localStorage.prevPage = "index.html";
                     window.location = "overview.html";
                 });
 				

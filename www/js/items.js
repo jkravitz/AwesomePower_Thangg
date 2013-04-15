@@ -19,6 +19,7 @@
 
 var items = getItems();
 var numItems = countItems();
+var currentSchedule = localStorage.currentSchedule;
 
 function getItems() {
 	if (localStorage.items == undefined) {
@@ -150,5 +151,10 @@ function removeItem(id) {
 	delete items[id];
 }
 
+function removeCurrentSchedule() {
+	if (localStorage.getItem('currentSchedule') != null) {
+		localStorage.removeItem('currentSchedule');
+	}	
+}
 
 

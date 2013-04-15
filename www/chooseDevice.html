@@ -37,14 +37,18 @@
         $(function() {
             $(document).on('click', '.remoteButton', function() {
                 event.preventDefault();
+				localStorage.prevPage = "chooseDevice.html";
                 window.location = "index.html";
             });
             $(document).on('click', '.overviewButton', function() {
                 event.preventDefault();
+				localStorage.prevPage = "chooseDevice.html";
                 window.location = "overview.html";
             });
             $(document).on('click', '.ui-state-default', function() {
                 event.preventDefault();
+				localStorage.currentSchedule = $(this).attr('id');
+				localStorage.prevPage = "chooseDevice.html";
                 window.location = "schedule.html";
             });
         });

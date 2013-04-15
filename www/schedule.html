@@ -10,7 +10,7 @@
     <script  src="jquery/js/jquery-ui-1.10.2.custom.js"></script>
     <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
     <script>
-        $(function() {
+	    $(function() {
             $( "#resizable" )
             .resizable({handles: "e, w", distance: 20})
             .draggable({ axis: "x", distance: 20});
@@ -23,11 +23,13 @@
         $(function() {
             $(document).on('click', '#overviewButton', function() {
                 event.preventDefault();
+				localStorage.prevPage = "schedule.html";
                 window.location = "overview.html";
             });
 
             $(document).on('click', '#remoteButton', function() {
                 event.preventDefault();
+				localStorage.prevPage = "schedule.html";
                 window.location = "index.html";
             });
         });
