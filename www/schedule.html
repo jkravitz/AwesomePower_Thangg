@@ -34,51 +34,97 @@
             });
         });
         $(function() {
-            $( ".newScheduleTime" ).draggable({
+            $(".newScheduleTime").draggable({
                 containment: "body",
                 helper: "clone",
                 opacity: 0.8,
                 distance: 0,
                 cursorAt: {top: 59, left: 59}
             });
-            $( ".timeSlot" ).draggable({
-                containment: "#maincontent",
+            $(".timeSlot").draggable({
                 revert: "true"
             });
-            $( "#trashCan" ).droppable({
+            $("#trashCan").droppable({
                 accept: ".timeSlot",
                 activeClass: "ui-state-hover",
                 hoverClass: "ui-state-active",
+                activate: function(event, ui) {
+                    $(this).children().attr('src', "img/IconShock - Android Icons/trash_can_add.png");
+                },
+                deactivate: function(event, ui) {
+                    $(this).children().attr('src', "img/IconShock - Android Icons/trash_can.png");
+                },
+                over: function(event, ui) {
+                    $(this).children().attr('src', "img/IconShock - Android Icons/trash_can_open_add.png");
+                },
+                out: function(event, ui) {
+                    $(this).children().attr('src', "img/IconShock - Android Icons/trash_can_add.png");
+                },
                 drop: function(event, ui) {
-                    $(event.toElement).remove()
+                    $(ui.helper.context).remove();
                 }
             });
-            $( ".dayRowSchedule" ).droppable({
-                accept: ".newScheduleTime",
-                activeClass: "ui-state-hover",
+            $(".dayRowSchedule").droppable({
+                accept: ".newScheduleTime,.timeSlot",
                 hoverClass: "ui-state-active",
+                activeClass: "ui-state-hover",
+                over: function(event, ui) {
+                    if (ui.helper.context.id == "") {
+                        $(ui.helper.context).draggable("option", "grid", [7.6041666666666666666666666666667, 84.5]);
+                    }
+                },
+                out:  function(event, ui) {
+                    $(ui.helper.context).draggable("option", "grid", false);
+                },
                 drop: insertTimeSlot
             });
         });
         
         function insertTimeSlot(event, ui) {
-            switch(ui.helper.context.id) {
-            case "turnOn":
-                $('<div class="timeSlot turnOnSlot">ON</div>')
-                    .appendTo(event.target)
-                    .draggable({
-                        containment: "parent",
-                        axis: "x",
-                        grid: [7.6041666666666666666666666666667, 0]
-                    });
-                break;
-            case "turnOff":
-                break;
-            case "turnOnThenOff":
-                break;
-            case "turnOffThenOn":
-                break;
+            var dragged_elem = ui.helper.context;
+            var type = dragged_elem.id;
+            if (type == "") {
+                /* rearrange */
+                //$(dragged_elem).detach().appendTo(event.target);
+            } else {
+                /* insert into schedule */
+                switch (type) {
+                case "turnOn":
+                    var slot = '<div class="timeSlot turnOnSlot"><img src="img/IconShock - Android Icons/lightbulb_on.png" width="30" height="30"/><div>on</div></div>';
+                    $(slot)
+                        .appendTo(event.target)
+                        /*.position({of: })*/
+                        .draggable({
+                            containment: "body",
+                            revert: "invalid",
+                            snap: ".dayRowSchedule",
+                            snapMode: "inner",
+                            grid: [7.6041666666666666666666666666667, 84.5],
+                            stop: saveSchedule
+                        });
+                    break;
+                case "turnOff":
+                    var slot = '<div class="timeSlot turnOffSlot"><img src="img/IconShock - Android Icons/lightbulb_off.png" width="30" height="30"/><div>off</div></div>';
+                    $(slot)
+                        .appendTo(event.target)
+                        /*.position({of: })*/
+                        .draggable({
+                            containment: "body",
+                            revert: "invalid",
+                            snap: ".dayRowSchedule",
+                            snapMode: "inner",
+                            grid: [7.6041666666666666666666666666667, 84.5],
+                            stop: saveSchedule
+                        });
+                    break;
+                case "motionActivated":
+                    break;
+                }
             }
+        }
+        
+        function saveSchedule(event, ui) {
+            var t = this;
         }
     </script>
 </head>

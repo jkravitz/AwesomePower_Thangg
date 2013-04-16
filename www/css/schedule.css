@@ -120,6 +120,7 @@
 }
 
 .dayRowSchedule {
+    box-sizing: border-box;
     float: left;
     width: 730px;
     height: 100%;
@@ -129,20 +130,35 @@
 /* Styling for items inside the schedule */
 
 .timeSlot {
+    position: relative;
     display: inline-block;
     box-sizing: border-box;
     width: 4.16666666666666666666666666666667%;
     height: 100%;
     margin: 0px;
+    padding-top: 16px;
     border: 1px solid rgb(200,200,200);
-    border-radius: 2px;
+    border-radius: 0px;
     background-color: white;
     font-size: 14px;
     text-align: center;
 }
 
+.timeSlot > div {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    font-variant: small-caps;
+}
+
 .turnOnSlot {
 
+}
+
+.turnOffSlot {
+    background-color: rgb(64,64,64);
+    color: rgb(245,245,245);
 }
 
 /* Right sidebar for adding new times */
