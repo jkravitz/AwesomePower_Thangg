@@ -46,9 +46,10 @@
                 revert: "true"
             });
             $( "#trashCan" ).droppable({
+                accept: ".timeSlot",
                 activeClass: "ui-state-hover",
                 hoverClass: "ui-state-active",
-                drop: function (event, ui ) {
+                drop: function(event, ui) {
                     $(event.toElement).remove()
                 }
             });
@@ -56,28 +57,29 @@
                 accept: ".newScheduleTime",
                 activeClass: "ui-state-hover",
                 hoverClass: "ui-state-active",
-                drop: function (event, ui ) {
-                    switch(ui.helper.context.id) {
-                    case "turnOn":
-                        $(document.createElement('div'))
-                            .html("ON")
-                            .addClass("timeSlot").addClass("turnOnSlot")
-                            .width("50px")
-                            .appendTo(event.target)
-                            .draggable({
-                                revert: "invalid"
-                            });
-                        break;
-                    case "turnOff":
-                        break;
-                    case "turnOnThenOff":
-                        break;
-                    case "turnOffThenOn":
-                        break;
-                    }
-                }
+                drop: insertTimeSlot
             });
         });
+        
+        function insertTimeSlot(event, ui) {
+            switch(ui.helper.context.id) {
+            case "turnOn":
+                $('<div class="timeSlot turnOnSlot">ON</div>')
+                    .appendTo(event.target)
+                    .draggable({
+                        containment: "parent",
+                        axis: "x",
+                        grid: [7.6041666666666666666666666666667, 0]
+                    });
+                break;
+            case "turnOff":
+                break;
+            case "turnOnThenOff":
+                break;
+            case "turnOffThenOn":
+                break;
+            }
+        }
     </script>
 </head>
     
@@ -126,33 +128,35 @@
                     </div>
                 </div>
             </div>
-            <div class="dayRow clearfix">
-                <div class="dayNameBox">Mon</div>
-                <div class="dayRowSchedule"></div>
-            </div>
-            <div class="dayRow clearfix">
-                <div class="dayNameBox">Tue</div>
-                <div class="dayRowSchedule"></div>
-            </div>
-            <div class="dayRow clearfix">
-                <div class="dayNameBox">Wed</div>
-                <div class="dayRowSchedule"></div>
-            </div>
-            <div class="dayRow clearfix">
-                <div class="dayNameBox">Thu</div>
-                <div class="dayRowSchedule"></div>
-            </div>
-            <div class="dayRow clearfix">
-                <div class="dayNameBox">Fri</div>
-                <div class="dayRowSchedule"></div>
-            </div>
-            <div class="dayRow clearfix">
-                <div class="dayNameBox">Sat</div>
-                <div class="dayRowSchedule"></div>
-            </div>
-            <div class="dayRow clearfix">
-                <div class="dayNameBox">Sun</div>
-                <div class="dayRowSchedule"></div>
+            <div id="scheduleContainer">
+                <div class="dayRow clearfix">
+                    <div class="dayNameBox">Mon</div>
+                    <div class="dayRowSchedule"></div>
+                </div>
+                <div class="dayRow clearfix">
+                    <div class="dayNameBox">Tue</div>
+                    <div class="dayRowSchedule"></div>
+                </div>
+                <div class="dayRow clearfix">
+                    <div class="dayNameBox">Wed</div>
+                    <div class="dayRowSchedule"></div>
+                </div>
+                <div class="dayRow clearfix">
+                    <div class="dayNameBox">Thu</div>
+                    <div class="dayRowSchedule"></div>
+                </div>
+                <div class="dayRow clearfix">
+                    <div class="dayNameBox">Fri</div>
+                    <div class="dayRowSchedule"></div>
+                </div>
+                <div class="dayRow clearfix">
+                    <div class="dayNameBox">Sat</div>
+                    <div class="dayRowSchedule"></div>
+                </div>
+                <div class="dayRow clearfix">
+                    <div class="dayNameBox">Sun</div>
+                    <div class="dayRowSchedule"></div>
+                </div>
             </div>
         </div>
         <div id="rightAddingPane">
@@ -164,11 +168,11 @@
                 <img src="img/IconShock - Android Icons/lightbulb_off_add.png" width="72" height="72"/>
                 <div>Turn off</div>
             </div>
-            <div id="turnOnThenOff" class="sidebarItem newScheduleTime">
+            <div id="motionActivated" class="sidebarItem newScheduleTime">
                 <img src="img/IconShock - Android Icons/lightbulb_on_right.png" width="72" height="72"/>
                 <div>Motion</div>
             </div>
-            <div id="turnOffThenOn" class="sidebarItem newScheduleTime">Off then on</div>
+            <div id="turnOffThenOn" class="sidebarItem newScheduleTime">What here?</div>
             <div id="sidebarDivider"></div>
             <div id="trashCan" class="sidebarItem">
                 <img src="img/IconShock - Android Icons/trash_can.png" width="72" height="72"/>

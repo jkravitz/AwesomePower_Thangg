@@ -12,7 +12,7 @@
 
 #maincontent {
     text-align: inherit;
-    background-color: rgba(200,200,200, .5);
+    background-color: rgba(200,200,200, 0);
 }
 
 #leftSchedulePane {
@@ -21,6 +21,8 @@
     border-radius: 3px;
     background-color: rgba(255,255,255, .9);
 }
+
+/* Device information header (contains the schedule time bar, too) */
 
 #deviceHeader {
     height: 110px;
@@ -48,6 +50,8 @@
     font-size: 24px;
     color: rgb(60,60,60);
 }
+
+/* Time ruler above the schedule rows */
 
 #scheduleTimeBar {
     width: 731px;
@@ -93,8 +97,15 @@
     background-color: rgb(220,220,220);
 }
 
+/* The schedule rows */
+
+#scheduleContainer {
+    height: 592px;
+}
+
 .dayRow {
-    height: 84px;
+    box-sizing: border-box;
+    height: 14.285714285714285714285714285714%;
     border-top: 1px solid rgb(150,150,150);
 }
 
@@ -111,9 +122,30 @@
 .dayRowSchedule {
     float: left;
     width: 730px;
-    height: 84px;
+    height: 100%;
     border-left: 1px solid rgb(150,150,150);
 }
+
+/* Styling for items inside the schedule */
+
+.timeSlot {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 4.16666666666666666666666666666667%;
+    height: 100%;
+    margin: 0px;
+    border: 1px solid rgb(200,200,200);
+    border-radius: 2px;
+    background-color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.turnOnSlot {
+
+}
+
+/* Right sidebar for adding new times */
 
 #rightAddingPane {
     float: right;
@@ -146,6 +178,8 @@
 #trashcan {
     box-shadow: none;
 }
+
+/* Jeff's stuff */
 
 #resizable { width: 80px; height: 80px; padding: 0.0em; }
 #resizable h3 { text-align: center; margin: 0; }
