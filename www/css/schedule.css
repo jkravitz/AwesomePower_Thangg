@@ -3,10 +3,10 @@
     src: url(../fonts/CalibriL.ttf);
 }
 
-.clearfix:after { 
+.clearfix:after {
     content: " ";
-    display: block; 
-    height: 0; 
+    display: block;
+    height: 0;
     clear: both;
 }
 
@@ -18,7 +18,7 @@
 #leftSchedulePane {
     height: 712px;
     float: left;
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: rgba(255,255,255, .9);
 }
 
@@ -77,7 +77,7 @@
     top: 18px;
     width: 2px;
     height: 12px;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0,.3);
 }
 
 .shortHourMark {
@@ -120,17 +120,31 @@
     height: 692px;
     padding: 10px;
     background-color: rgba(255,255,255, .9);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 
 .sidebarItem {
+    font-family: "Calibri Light";
     width: 118px;
-    height: 118px;
+    height: 114px;
     margin-bottom: 10px;
     padding: 5px;
     border: 1px solid rgb(200,200,200);
     border-radius: 4px;
     background-color: white;
+    box-shadow: 0 0 6px 0px rgba(0,0,0, .25);
+    text-align: center;
+}
+
+#sidebarDivider {
+    border-top: 2px dotted rgba(0,0,0, .3);
+    height: 0;
+    width: 128px;
+    margin: 15px 0 15px 1px;
+}
+
+#trashcan {
+    box-shadow: none;
 }
 
 #resizable { width: 80px; height: 80px; padding: 0.0em; }
