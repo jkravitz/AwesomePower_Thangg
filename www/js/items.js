@@ -28,7 +28,7 @@ function getItems() {
 						 image : "img/lightbulbIcon.png",
 						 hasSchedule : 'yes',
 						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
-									 tuesday: [], 
+									 tuesday: ['08.00','09.00','12.00','14.00'], 
 									 wednesday:[], 
 									 thursday:[], 
 									 friday:[], 
