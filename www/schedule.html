@@ -11,13 +11,17 @@
     <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
 	<script  src="./js/items.js"></script>
     <script>
-		window.onload=function(){
+		$(function() {
+            var item_data = items[localStorage.pageid];
 			//alert(localStorage.items['item1'])
-			document.getElementById("deviceName").innerHTML = items[localStorage.pageid].name;
-			document.getElementById("deviceImage").src = items[localStorage.pageid].image;
-			document.getElementById("deviceLocation").innerHTML = items[localStorage.pageid].deviceLocation;
+			document.getElementById("deviceName").innerHTML = item_data.name;
+			document.getElementById("deviceImage").src = item_data.image;
+			document.getElementById("deviceLocation").innerHTML = item_data.deviceLocation;
+            if (!(item_data.fullschedule === undefined)) {
+                loadSchedule(item_data.fullschedule);
+            }
 			items[localStorage.pageid].hasSchedule='yes';
-		};
+		});
         $(function() {
             $( "#resizable" )
             .resizable({handles: "e, w", distance: 20})
@@ -153,12 +157,14 @@
                 case "motionActivated":
                     break;
                 }
+                
+                saveSchedule();
             }
         }
         
         function saveSchedule() {
+            items[localStorage.pageid].fullschedule = new Array();
             $(".dayRowSchedule").each(function(index, Element) {
-                var t = this;
                 var daySchedule = {
                     day: this.parentElement.children[0].textContent,
                     times: new Array(),
@@ -174,6 +180,57 @@
                         time: time,
                     });
                 };
+                items[localStorage.pageid].fullschedule.push(daySchedule);
+            });
+            localStorage.items = JSON.stringify(items);
+        }
+        
+        function loadSchedule(schedule) {
+            $(".dayRowSchedule").each(function(index, Element) {
+                var times = schedule[index].times;
+                for (var i = 0; i < times.length; i++) {
+                    var time = times[i];
+                    var slotElem;
+                    switch (time.type) {
+                    case "on":
+                        slotElem = createOn();
+                        break;
+                    case "off":
+                        slotElem = createOff();
+                        break;
+                    }
+                    var fraction = time.time / 24;
+                    var rowOffset = $(this).offset();
+                    var targetOffset = {
+                        left: (this.clientWidth * fraction) + rowOffset.left,
+                        top: rowOffset.top,
+                    }
+                    slotElem.appendTo(this).offset(targetOffset);
+                }
+            });
+        }
+        
+        function createOn() {
+                    var slot = '<div class="timeSlot turnOnSlot"><img src="img/IconShock - Android Icons/lightbulb_on.png" width="30" height="30"/><div>on</div></div>';
+            return $(slot).draggable({
+                containment: "body",
+                revert: "invalid",
+                snap: ".dayRowSchedule",
+                snapMode: "inner",
+                grid: [1, 84.5],
+                stop: saveSchedule
+            });
+        }
+        
+        function createOff() {
+            var slot = '<div class="timeSlot turnOffSlot"><img src="img/IconShock - Android Icons/lightbulb_off.png" width="30" height="30"/><div>off</div></div>';
+            return $(slot).draggable({
+                containment: "body",
+                revert: "invalid",
+                snap: ".dayRowSchedule",
+                snapMode: "inner",
+                grid: [1, 84.5],
+                stop: saveSchedule
             });
         }
     </script>
