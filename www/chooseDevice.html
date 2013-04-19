@@ -25,11 +25,11 @@
             });
             $(document).on('click', '.ui-state-default', function() {
                 event.preventDefault();
-				/*localStorage.currentSchedule = $(this).attr('id');
+				localStorage.currentSchedule = $(this).attr('id');
 				localStorage.prevPage = "chooseDevice.html";
 				localStorage.pageid = $(this).attr('id');
 				items[this.id].hasSchedule="yes";
-				localStorage.items = JSON.stringify(items);		*/		
+				localStorage.items = JSON.stringify(items);				
                 window.location = "schedule.html";
             });
         });
