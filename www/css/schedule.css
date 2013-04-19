@@ -110,10 +110,9 @@
 	
 }
 .oddDay{
-	background-color:#F7F7F7;
 }
-.evenDay{
-
+.evenDay{	
+background-color:#F7F7F7;
 }
 
 .dayNameBox {

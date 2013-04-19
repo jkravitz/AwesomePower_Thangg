@@ -10,6 +10,7 @@
     <script  src="jquery/js/jquery-ui-1.10.2.custom.js"></script>
     <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
 	<script  src="./js/items.js"></script>
+	
     <script>
         $(function() {
             $(document).on('click', '.remoteButton', function() {
@@ -27,6 +28,9 @@
 				localStorage.currentSchedule = $(this).attr('id');
 				localStorage.prevPage = "chooseDevice.html";
 				localStorage.pageid = $(this).attr('id');
+				items[this.id].hasSchedule="yes";
+				alert(items[this.id].hasSchedule);
+				localStorage.items = JSON.stringify(items);				
                 window.location = "schedule.html";
             });
         });
@@ -52,7 +56,7 @@
 	<script>
 			for (var item in items) {
 				var idItem = item;
-				if(items[item]){
+				if(items[item].hasSchedule=='no'){
 					var createHTML = '<li class="ui-state-default"'+'id='+idItem+'>'+
 										'<span>'+items[item].name+'</span><img src="'+items[item].image+'" /></li>';
 					$("#itemsList").prepend(createHTML);

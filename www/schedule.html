@@ -16,7 +16,7 @@
 			document.getElementById("deviceName").innerHTML = items[localStorage.pageid].name;
 			document.getElementById("deviceImage").src = items[localStorage.pageid].image;
 			document.getElementById("deviceLocation").innerHTML = items[localStorage.pageid].deviceLocation;
-		
+			items[localStorage.pageid].hasSchedule='yes';
 		};
         $(function() {
             $( "#resizable" )
