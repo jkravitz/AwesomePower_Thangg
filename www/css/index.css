@@ -250,25 +250,25 @@ input {
 	background-color: rgba(0,0,0,0.3);
 	height: 10px;
 	border-top: 1px dashed rgba(255,255,255,0.8);
-    background: rgba(255,255,255,0.3);
 }
 
 .addSchedule > img {
-		position: relative;
-		left: 50%;
-		top: -71px;
-		background-image:url('../img/grey_wash_wall.png');
-		//background-color: rgba(255,255,255,1);
-		height: 55px;
-		width: 55px;
-		border-top-left-radius: 7px;
-		border-top-right-radius: 7px;
-		padding: 8px;
-		border-top: 1px dashed rgba(255,255,255,0.8);
-		border-left: 1px dashed rgba(255,255,255,0.8);
-		border-right: 1px dashed rgba(255,255,255,0.8);
-        background: rgba(255,255,255,0.3);
+    position: relative;
+    left: 50%;
+    top: -71px;
+    background-image:url('../img/grey_wash_wall.png');
+    //background-color: rgba(255,255,255,1);
+    height: 55px;
+    width: 55px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding: 8px;
+    border-top: 1px dashed rgba(255,255,255,0.8);
+    border-left: 1px dashed rgba(255,255,255,0.8);
+    border-right: 1px dashed rgba(255,255,255,0.8);
 }
+
+
 
 .footer {
 		text-align:center; 
