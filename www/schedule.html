@@ -89,7 +89,7 @@
         });
         
         function insertTimeSlot(event, ui) {
-            var dragged_elem = ui.helper.context;
+            var dragged_elem = ui.draggable.context;
             var type = dragged_elem.id;
             if (type == "") {
                 /* rearrange */
@@ -98,10 +98,20 @@
                 /* insert into schedule */
                 switch (type) {
                 case "turnOn":
+                    var scheduleRowOffset = $(event.target).offset();
+                    var targetOffset = {
+                        left: ui.position.left + (dragged_elem.clientWidth / 2) - 20,
+                        top: scheduleRowOffset.top
+                    }
+                    if (targetOffset.left < scheduleRowOffset.left) {
+                        targetOffset.left = scheduleRowOffset.left + 1;
+                    } else if (targetOffset.left > scheduleRowOffset.left + event.target.clientWidth - 64) {
+                        targetOffset.left = scheduleRowOffset.left + event.target.clientWidth - 28;
+                    }
                     var slot = '<div class="timeSlot turnOnSlot"><img src="img/IconShock - Android Icons/lightbulb_on.png" width="30" height="30"/><div>on</div></div>';
                     $(slot)
                         .appendTo(event.target)
-                        /*.position({of: })*/
+                        .offset(targetOffset)
                         .draggable({
                             containment: "body",
                             revert: "invalid",
@@ -112,10 +122,20 @@
                         });
                     break;
                 case "turnOff":
+                    var scheduleRowOffset = $(event.target).offset();
+                    var targetOffset = {
+                        left: ui.position.left + (dragged_elem.clientWidth / 2) - 20,
+                        top: scheduleRowOffset.top
+                    }
+                    if (targetOffset.left < scheduleRowOffset.left) {
+                        targetOffset.left = scheduleRowOffset.left + 1;
+                    } else if (targetOffset.left > scheduleRowOffset.left + event.target.clientWidth - 64) {
+                        targetOffset.left = scheduleRowOffset.left + event.target.clientWidth - 28;
+                    }
                     var slot = '<div class="timeSlot turnOffSlot"><img src="img/IconShock - Android Icons/lightbulb_off.png" width="30" height="30"/><div>off</div></div>';
                     $(slot)
                         .appendTo(event.target)
-                        /*.position({of: })*/
+                        .offset(targetOffset)
                         .draggable({
                             containment: "body",
                             revert: "invalid",
