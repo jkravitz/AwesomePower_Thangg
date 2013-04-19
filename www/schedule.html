@@ -32,12 +32,14 @@
             $(document).on('click', '#overviewButton', function() {
                 event.preventDefault();
                 localStorage.prevPage = "schedule.html";
+                saveSchedule();
                 window.location = "overview.html";
             });
 
             $(document).on('click', '#remoteButton', function() {
                 event.preventDefault();
                 localStorage.prevPage = "schedule.html";
+                saveSchedule();
                 window.location = "index.html";
             });
         });
@@ -78,7 +80,7 @@
                 activeClass: "ui-state-hover",
                 over: function(event, ui) {
                     if (ui.helper.context.id == "") {
-                        $(ui.helper.context).draggable("option", "grid", [7.6041666666666666666666666666667, 84.5]);
+                        $(ui.helper.context).draggable("option", "grid", [1, 84.5]);
                     }
                 },
                 out:  function(event, ui) {
@@ -93,7 +95,10 @@
             var type = dragged_elem.id;
             if (type == "") {
                 /* rearrange */
-                //$(dragged_elem).detach().appendTo(event.target);
+                $(dragged_elem).detach().appendTo(event.target);
+                var targetOffset = $(dragged_elem).offset();
+                targetOffset.top = $(event.target).offset().top;
+                $(dragged_elem).offset(targetOffset);
             } else {
                 /* insert into schedule */
                 switch (type) {
@@ -117,7 +122,7 @@
                             revert: "invalid",
                             snap: ".dayRowSchedule",
                             snapMode: "inner",
-                            grid: [7.6041666666666666666666666666667, 84.5],
+                            grid: [1, 84.5],
                             stop: saveSchedule
                         });
                     break;
@@ -141,7 +146,7 @@
                             revert: "invalid",
                             snap: ".dayRowSchedule",
                             snapMode: "inner",
-                            grid: [7.6041666666666666666666666666667, 84.5],
+                            grid: [1, 84.5],
                             stop: saveSchedule
                         });
                     break;
@@ -151,8 +156,25 @@
             }
         }
         
-        function saveSchedule(event, ui) {
-            var t = this;
+        function saveSchedule() {
+            $(".dayRowSchedule").each(function(index, Element) {
+                var t = this;
+                var daySchedule = {
+                    day: this.parentElement.children[0].textContent,
+                    times: new Array(),
+                }
+                var slots = this.children;
+                for (var i = 0; i < slots.length; i++) {
+                    var slotElem = this.children[i];
+                    var type = slotElem.textContent;
+                    var fraction = ($(slotElem).offset().left - $(this).offset().left) / (this.clientWidth);
+                    var time = fraction * 24.0;
+                    daySchedule.times.push({
+                        type: type,
+                        time: time,
+                    });
+                };
+            });
         }
     </script>
 </head>
@@ -246,7 +268,6 @@
                 <img src="img/IconShock - Android Icons/lightbulb_on_right.png" width="72" height="72"/>
                 <div>Motion</div>
             </div>
-            <div id="turnOffThenOn" class="sidebarItem newScheduleTime">What here?</div>
             <div id="sidebarDivider"></div>
             <div id="trashCan" class="sidebarItem">
                 <img src="img/IconShock - Android Icons/trash_can.png" width="72" height="72"/>
@@ -263,7 +284,7 @@
     
     
     
-    <!--
+
     <div id="leftcolumn">
         <div id="weekrow"></div>
         <div id="weekrow"></div>
@@ -280,7 +301,7 @@
         <div id="weekrow"></div>
     </div>
     <div id="rightcolumn"><p>text goes here</p></div>
-    -->
+
 
 </body>
 </html>
