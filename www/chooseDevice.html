@@ -29,7 +29,6 @@
 				localStorage.prevPage = "chooseDevice.html";
 				localStorage.pageid = $(this).attr('id');
 				items[this.id].hasSchedule="yes";
-				//alert(items[this.id].hasSchedule);
 				localStorage.items = JSON.stringify(items);				
                 window.location = "schedule.html";
             });
