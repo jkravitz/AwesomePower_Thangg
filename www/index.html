@@ -25,6 +25,11 @@
         <title>Awesome Power Thangg</title>
         <link rel="stylesheet" href="./jquery/css/ui-lightness/jquery-ui-1.10.2.custom.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<style>
+		label, input { display:block; color:black }
+		input.text { margin-bottom:12px; width:95%; padding: .4em; border-color:black;}
+		fieldset { padding:0; border:0; margin-top:25px; color: black; }
+		</style>
         <script  src="./jquery/js/jquery-1.9.1.js"></script>
         <script  src="./jquery/js/jquery-ui-1.10.2.custom.js"></script>
         <script  src="./jquery/js/jquery.ui.touch-punch.js"></script>
@@ -78,16 +83,35 @@
 							items[this.id].status='off';
 						}
 				});
+				var name = $( "#name" ),
+				location = $( "#location" ),
+				allFields = $( [] ).add( name ).add( location ),
+				tips = $( ".validateTips" );
+				
+				 $( "#dialog-form" ).dialog({
+					autoOpen: false,
+					height: 300,
+					width: 350,
+					modal: true,
+					buttons: {
+						Add: function() {
+							numItems++;
+							var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+'item'+numItems+ '>'+
+											'<span>'+name.val()+'<br>'+'</span><img src="'+items[item].image+'" /></li>';
+							newItem('item'+numItems, name.val(), 'img/websiteIcon.png', location.val());
+							$("#sortable").prepend(createHTML);
+							$( this ).dialog( "close" );
+						},
+						Cancel: function() {
+							$( this ).dialog( "close" );
+						}
+					}
+					
+				});
 				
 				$(".addIcon").disableSelection();
 				$(document).on('click', '.addIcon', function() {
-						//need to replace with more effective method
-						numItems++;
-						var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+'item'+numItems+ '>'+
-											'<span>'+'Item '+ numItems+'</span><img src="'+items[item].image+'" /></li>';
-						
-						newItem('item'+numItems, 'Item '+numItems, 'img/websiteIcon.png');
-					$("#sortable").prepend(createHTML);
+						$( "#dialog-form" ).dialog( "open" );			
 				});
 
             });
@@ -103,6 +127,18 @@
 				<div class="leftButton button overviewButton">Schedules</div>
 				<div class="midContainer"><h1 id="pageTitle" >Devices Overview</h1></div>
 				<div class="rightButton button scheduleButton">temp. Schedule</div>
+			</div>
+			<div id="dialog-form" title="Add New Device">
+				<p class="validateTips">All form fields are required.</p>
+				 
+				<form>
+					<fieldset>
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" value="" class="text ui-widget-content ui-corner-all" />
+						<label for="location">Location</label>
+						<input type="text" name="location" id="location" value="" class="text ui-widget-content ui-corner-all" />
+					</fieldset>
+				</form>
 			</div>
 
             <div id="maincontentremote" class="ui-widget ui-helper-clearfix ">

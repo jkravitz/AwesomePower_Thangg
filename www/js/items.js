@@ -130,7 +130,7 @@ function countItems() {
     return size;
 }
 
-function newItem(id, itemName, imageLink) {
+function newItem(id, itemName, imageLink, location) {
 	items[id] = {name : itemName,
 				status : 'off', 
 				image : imageLink,
@@ -142,7 +142,8 @@ function newItem(id, itemName, imageLink) {
 							friday:[], 
 							saturday:[], 
 							sunday:[]
-							}
+							},
+				deviceLocation: location
 				};
 	
 }
