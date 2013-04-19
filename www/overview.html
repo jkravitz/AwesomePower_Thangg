@@ -60,7 +60,7 @@
 	</div>
 	
 	<script>
-		function timeStringToPercent(time) {
+		/*function timeStringToPercent(time) {
 			var patt1=/[^\.]/g;
 			var numArray = time.match(patt1);
 					
@@ -69,7 +69,37 @@
 			var totalMinutes = hour*60 + minute;
 					
 			return totalMinutes/1440;
+		}*/
+		
+		function dayToString(day) {
+			var fullDay = '';
+			switch(day) {	
+				case 'Mon':
+					fullDay = 'monday';
+					break;
+				case 'Tue':
+					fullDay = 'tuesday';
+					break;
+				case 'Wed':
+					fullDay = 'wednesday';
+					break;
+				case 'Thu':
+					fullDay = 'thursday';
+					break;
+				case 'Fri':
+					fullDay = 'friday';
+					break;
+				case 'Sat':
+					fullDay = 'saturday';
+					break;
+				case 'Sun':
+					fullDay = 'sunday';
+					break;
+			};
+			return fullDay;
 		}
+				
+				
 		
 		function capitalizeFirstLetter(string) {
 			return string.charAt(0).toUpperCase() + string.slice(1);
@@ -84,9 +114,9 @@
 				'<div class="device" id="'+idItem+'">'+
 					'<div class="deviceImage"><span>'+items[item].name+'</span><img src="'+items[item].image+'" /></div>'+
 					'<div class="deviceSchedule">';
-					
-				for (var day in items[item].schedule) {
-					var classDay = day;
+				for (var i = 0; i < items[item].fullschedule.length; i++) {
+					day = items[item].fullschedule[i];
+					var classDay = dayToString(day.day);
 					
 					createHTML = createHTML + 
 						'<div class="'+classDay+'">' + 
@@ -94,17 +124,21 @@
 								capitalizeFirstLetter(classDay) + 
 							'</div>' + 
 							'<div class="time">';
-				
-					for (var i=0;i<items[item].schedule[day].length;i = i+2) {
-						var begin = items[item].schedule[day][i];
-						var end = items[item].schedule[day][i+1];					
-						var startPercent = timeStringToPercent(begin);
-						var endPercent  = timeStringToPercent(end);						
+						//	alert(day.times.length);
+					
+					for (var j=0;j<day.times.length;j = j+2) {
+					
+						timeOn = day.times[j];
+						timeOff = day.times[j+1];
+											
+						var startPercent = 100*timeOn.time/24;
+						var endPercent = 100*timeOff.time/24;
 						var widthPercent = endPercent - startPercent;
 						
 						createHTML = createHTML + 
 							"<div style=\"width: "+widthPercent+"%; "+
 								"left: "+startPercent+"%; \"></div>";
+								
 					}
 					
 					createHTML = createHTML + 

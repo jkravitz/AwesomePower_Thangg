@@ -24,102 +24,25 @@ function getItems() {
 	if (localStorage.items == undefined) {
 		items = {item1: {name : 'Item 1',
 						 status : 'on', 
-						 image : "img/lightbulbIcon.png",
+						 image : "img/DeviceIcons/MacBook.png",
 						 hasSchedule : 'yes',
-						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
-									 tuesday: ['08.00','09.00','12.00','14.00'], 
-									 wednesday:[], 
-									 thursday:[], 
-									 friday:[], 
-									 saturday:[], 
-									 sunday:[]
-									 },
+						 "fullschedule":[
+							{"day":"Mon","times":[
+								{"type":"on","time":4.510288065843621},
+								{"type":"off","time":14.45267489711934}]
+							},
+							{"day":"Tue","times":[
+								{"type":"on","time":9.613168724279836},
+								{"type":"off","time":15.440329218106996}]
+							},
+							{"day":"Wed","times":[]},
+							{"day":"Thu","times":[]},
+							{"day":"Fri","times":[]},
+							{"day":"Sat","times":[]},
+							{"day":"Sun","times":[]}
+							],
 						deviceLocation : 'Room A'
-						},
-				 item2: {name : 'Item 2',
-						 status : 'on', 
-						 image : "img/websiteIcon.png",
-						 hasSchedule : 'yes',
-						 schedule : {monday: [],
-									 tuesday: ['09.00','13.00','16.00','23.00'], 
-									 wednesday:[], 
-									 thursday:[], 
-									 friday:[], 
-									 saturday:[], 
-									 sunday:[]
-						},
-						deviceLocation : 'Room B'
 				},
-				 item3: {name : 'Item 3',
-						 status : 'on', 
-						 image : "img/websiteIcon.png",
-						 hasSchedule : 'yes',
-						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
-									 tuesday: [], 
-									 wednesday:[], 
-									 thursday:[], 
-									 friday:[], 
-									 saturday:[], 
-									 sunday:[]
-									 },
-						deviceLocation : 'Room C'
-						},
-				 item4: {name : 'Item 4',
-						 status : 'on', 
-						 image : "img/websiteIcon.png",
-						 hasSchedule : 'yes',
-						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
-									 tuesday: [], 
-									 wednesday:[], 
-									 thursday:[], 
-									 friday:[], 
-									 saturday:[], 
-									 sunday:[]
-									 },
-						deviceLocation : 'Room D'
-						},
-				 item5: {name : 'Item 5',
-						 status : 'on', 
-						 image : "img/websiteIcon.png",
-						 hasSchedule : 'yes',
-						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
-									 tuesday: [], 
-									 wednesday:[], 
-									 thursday:[], 
-									 friday:[], 
-									 saturday:[], 
-									 sunday:[]
-									 },
-						deviceLocation : 'Room E'
-						},
-				 item6: {name : 'Item 6',
-						 status : 'on', 
-						 image : "img/websiteIcon.png",
-						 hasSchedule : 'yes',
-						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
-									 tuesday: [], 
-									 wednesday:[], 
-									 thursday:[], 
-									 friday:[], 
-									 saturday:[], 
-									 sunday:[]
-									 },
-						deviceLocation : 'Room F'
-						},
-				item7: {name : 'Item 7',
-						 status : 'on', 
-						 image : "img/websiteIcon.png",
-						 hasSchedule : 'yes',
-						 schedule : {monday: ['08.00','09.00','12.00','14.00'],
-									 tuesday: [], 
-									 wednesday:[], 
-									 thursday:[], 
-									 friday:[], 
-									 saturday:[], 
-									 sunday:[]
-									 },
-						deviceLocation : 'Room G'
-						}
 				};
 	} else {
 		items = JSON.parse(localStorage.items);
