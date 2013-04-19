@@ -105,54 +105,26 @@
                 $(dragged_elem).offset(targetOffset);
             } else {
                 /* insert into schedule */
+                var scheduleRowOffset = $(event.target).offset();
+                var targetOffset = {
+                    left: ui.position.left + (dragged_elem.clientWidth / 2) - 20,
+                    top: scheduleRowOffset.top
+                }
+                if (targetOffset.left < scheduleRowOffset.left) {
+                    targetOffset.left = scheduleRowOffset.left + 1;
+                }
                 switch (type) {
                 case "turnOn":
-                    var scheduleRowOffset = $(event.target).offset();
-                    var targetOffset = {
-                        left: ui.position.left + (dragged_elem.clientWidth / 2) - 20,
-                        top: scheduleRowOffset.top
-                    }
-                    if (targetOffset.left < scheduleRowOffset.left) {
-                        targetOffset.left = scheduleRowOffset.left + 1;
-                    } else if (targetOffset.left > scheduleRowOffset.left + event.target.clientWidth - 64) {
+                    if (targetOffset.left > scheduleRowOffset.left + event.target.clientWidth - 64) {
                         targetOffset.left = scheduleRowOffset.left + event.target.clientWidth - 28;
                     }
-                    var slot = '<div class="timeSlot turnOnSlot"><img src="img/IconShock - Android Icons/lightbulb_on.png" width="30" height="30"/><div>on</div></div>';
-                    $(slot)
-                        .appendTo(event.target)
-                        .offset(targetOffset)
-                        .draggable({
-                            containment: "body",
-                            revert: "invalid",
-                            snap: ".dayRowSchedule",
-                            snapMode: "inner",
-                            grid: [1, 84.5],
-                            stop: saveSchedule
-                        });
+                    createOn().appendTo(event.target).offset(targetOffset);
                     break;
                 case "turnOff":
-                    var scheduleRowOffset = $(event.target).offset();
-                    var targetOffset = {
-                        left: ui.position.left + (dragged_elem.clientWidth / 2) - 20,
-                        top: scheduleRowOffset.top
-                    }
-                    if (targetOffset.left < scheduleRowOffset.left) {
-                        targetOffset.left = scheduleRowOffset.left + 1;
-                    } else if (targetOffset.left > scheduleRowOffset.left + event.target.clientWidth - 64) {
+                    if (targetOffset.left > scheduleRowOffset.left + event.target.clientWidth - 64) {
                         targetOffset.left = scheduleRowOffset.left + event.target.clientWidth - 28;
                     }
-                    var slot = '<div class="timeSlot turnOffSlot"><img src="img/IconShock - Android Icons/lightbulb_off.png" width="30" height="30"/><div>off</div></div>';
-                    $(slot)
-                        .appendTo(event.target)
-                        .offset(targetOffset)
-                        .draggable({
-                            containment: "body",
-                            revert: "invalid",
-                            snap: ".dayRowSchedule",
-                            snapMode: "inner",
-                            grid: [1, 84.5],
-                            stop: saveSchedule
-                        });
+                    createOff().appendTo(event.target).offset(targetOffset);
                     break;
                 case "motionActivated":
                     break;
@@ -211,7 +183,7 @@
         }
         
         function createOn() {
-                    var slot = '<div class="timeSlot turnOnSlot"><img src="img/IconShock - Android Icons/lightbulb_on.png" width="30" height="30"/><div>on</div></div>';
+            var slot = '<div class="timeSlot turnOnSlot"><img src="img/IconShock - Android Icons/lightbulb_on.png" width="30" height="30"/><div>on</div></div>';
             return $(slot).draggable({
                 containment: "body",
                 revert: "invalid",
@@ -229,6 +201,7 @@
                 revert: "invalid",
                 snap: ".dayRowSchedule",
                 snapMode: "inner",
+                snapTolerance: 5,
                 grid: [1, 84.5],
                 stop: saveSchedule
             });
