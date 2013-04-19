@@ -109,6 +109,12 @@
     border-top: 1px solid rgb(150,150,150);
 	
 }
+.oddDay{
+	background-color:#F7F7F7;
+}
+.evenDay{
+
+}
 
 .dayNameBox {
     float: left;
