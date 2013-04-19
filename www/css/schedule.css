@@ -169,17 +169,17 @@
 
 
 .ui-state-hover{
-		background: rgba(179,194,196,0.5);
-		border-color:#B3C2C4; 
-		color:#B3C2C4; 
+    background: rgba(179,194,196,0.5);
+    border-color:#B3C2C4; 
+    color:#B3C2C4; 
 }
 
 .ui-state-active{
-		box-shadow:0 0 70px #B3C2C4;
-		background: rgba(240,240,240,0.5);
-		border-color:#F0F0F0; 
-		color:#F0F0F0; 
-		box-shadow:0 0 100px #FAFAFA;
+    box-shadow:0 0 70px #B3C2C4;
+    background: rgba(240,240,240,0.5);
+    border-color:#F0F0F0; 
+    color:#F0F0F0; 
+    box-shadow:0 0 100px #FAFAFA;
 }
 
 /* Right sidebar for adding new times */

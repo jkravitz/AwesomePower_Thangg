@@ -98,11 +98,25 @@
             var dragged_elem = ui.draggable.context;
             var type = dragged_elem.id;
             if (type == "") {
+                positions = new Array();
+                /* Save position of existing blocks */
+                var rowSlots = dragged_elem.parentElement.children;
+                for (var i = 0; i < rowSlots.length; i++) {
+                    $.data(rowSlots[i], "offset", $(rowSlots[i]).offset());
+                    /*positions.push($(dragged_elem.parentElement.children[i]).offset();*/
+                }
+                $.removeData(dragged_elem, "offset");
                 /* rearrange */
                 $(dragged_elem).detach().appendTo(event.target);
                 var targetOffset = $(dragged_elem).offset();
                 targetOffset.top = $(event.target).offset().top;
+                targetOffset.left = ui.offset.left;
                 $(dragged_elem).offset(targetOffset);
+                /* Restore position of existing blocks. They may have shifted left */
+                for (var i = 0; i < rowSlots.length; i++) {
+                    $(rowSlots[i]).offset($.data(rowSlots[i], "offset"));
+                    $.removeData(rowSlots[i], "offset");
+                }
             } else {
                 /* insert into schedule */
                 var scheduleRowOffset = $(event.target).offset();
