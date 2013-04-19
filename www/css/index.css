@@ -66,6 +66,13 @@ body {
 	height: 100%;
 }
 
+#header .midContaineronebut {
+	float: left;
+	width: 80%;
+	text-align:center;
+	height: 100%;
+}
+
 #header .rightButton {
 	float: left;
 	border-left: 1px dashed rgba(255,255,255,0.8);
@@ -83,6 +90,12 @@ body {
 	text-shadow: 0px 0px 3px rgba(0,0,0,0.5);
     cursor: pointer; /* for use on a computer */
 }
+#header .fillerbut{
+	height: 100%; 
+	width: 20%;
+	float:left;
+}
+
 
 #header #pageTitle {
     font-size: 35px;
@@ -170,9 +183,10 @@ input {
 	background-color: rgba(255,255,255, .9);//rgba(210,210,255,0.5); 
 	border-radius: 5px;  
 	padding: 6px 1%; 
-	margin: 10px 0px; 
-	box-shadow:0px 0px 8px #222;
+	margin: 20px 0px; 
 	display: block;
+	box-shadow:0 0 20px #E8EAEB;
+
 }
 .deviceImage {
 	width: 10%;
@@ -328,7 +342,14 @@ li {
 .ui-state-default > img {
 	height: 65px;
 }
-
+.ui-widget-header{
+	border: 1px solid #8A8A8A;
+	background: #8A8A8A url(images/ui-bg_gloss-wave_35_f6a828_500x100.png) 50% 50% repeat-x;
+}
+.ui-state-focus {
+	font-weight: bold;
+	color: #8A8A8A;
+}
 .thumbnail{
 		width:12%; 
 		 
@@ -394,3 +415,4 @@ margin-left:5%;
 	margin-bottom:20px;
 	margin-top:20px;
 }
+

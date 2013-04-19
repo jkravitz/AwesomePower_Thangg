@@ -29,7 +29,7 @@
 				localStorage.prevPage = "chooseDevice.html";
 				localStorage.pageid = $(this).attr('id');
 				items[this.id].hasSchedule="yes";
-				alert(items[this.id].hasSchedule);
+				//alert(items[this.id].hasSchedule);
 				localStorage.items = JSON.stringify(items);				
                 window.location = "schedule.html";
             });
@@ -41,7 +41,7 @@
 <body class="overview">
    	<div id="header">
 				<div class="leftButton button overviewButton"><span>Back</span></div>
-				<div class="midContainer"><h1 id="pageTitle" >Choose device to add schedule for</h1></div>
+				<div class="midContainer"><h1 id="pageTitle" >Add Schedule for Device</h1></div>
 				<div class="rightButton button remoteButton"><span>Remote</span></div>
 			</div>
     <div id="leftcolumn">
@@ -54,14 +54,22 @@
 	</div>
  
 	<script>
+			var numitems =0;
 			for (var item in items) {
 				var idItem = item;
 				if(items[item].hasSchedule=='no'){
 					var createHTML = '<li class="ui-state-default"'+'id='+idItem+'>'+
 										'<span>'+items[item].name+'</span><img src="'+items[item].image+'" /></li>';
 					$("#itemsList").prepend(createHTML);
+					numitems++;
 				}
 			}
+			if(numitems==0){
+				var createHTML ='<h2 style="color:rgba(255,255,255,0.95); font-family:\'HelveticaNeue-Light\', \'HelveticaNeue\', Helvetica, Arial, sans-serif;"> All Devices Scheduled </h2>';
+				$("#itemsList").prepend(createHTML);
+
+			}
+			
 	</script>
 </body>
 </html>
