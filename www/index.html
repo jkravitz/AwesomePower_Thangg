@@ -117,6 +117,28 @@
 						$( "#dialog-form" ).dialog( "open" );
 				});
 
+                
+                $("#trash").droppable({
+                    accept: ".allremoteitems",
+                    activeClass: "trash-hover",
+                    hoverClass: "trash-active",
+                    tolerance: "touch",
+                    /*activate: function(event, ui) {
+                        $(this).children().attr('src', "img/IconShock - Android Icons/trash_can_add.png");
+                    },
+                    deactivate: function(event, ui) {
+                        $(this).children().attr('src', "img/IconShock - Android Icons/trash_can.png");
+                    },
+                    over: function(event, ui) {
+                        $(this).children().attr('src', "img/IconShock - Android Icons/trash_can_open_add.png");
+                    },
+                    out: function(event, ui) {
+                        $(this).children().attr('src', "img/IconShock - Android Icons/trash_can_add.png");
+                    },*/
+                    drop: function(event, ui) {
+                        $(ui.helper.context).remove();
+                    }
+                });
             });
 			
 			
@@ -166,11 +188,7 @@
                     </li>
                 </ul>
             </div>
-            <div id = "trash" class=" footer">
-                	Trash (need to style)
-                    <ul class="maincontent">
-                    </ul>
-                </div>
+            <div id = "trash" class=" footer"><div>Trash</div></div>
 
         </div>
 
