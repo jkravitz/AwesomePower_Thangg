@@ -16,19 +16,24 @@
 		}
 			
     </style>
-    <script>
+    <script type="application/javascript">
 		$(function() {
-            $(document).on('click', '.remoteButton', function() {
+            $(".remoteButton" ).click(function( event ) {
 				event.preventDefault();
 				localStorage.prevPage = "overview.html";
                 window.location = "index.html";
             });
-            $(document).on('click', '#plusSchedule', function() {
+		});
+		$(function() { 
+			$( "#plusSchedule" ).click(function( event ) {
                 event.preventDefault();
 				localStorage.prevPage = "overview.html";
                 window.location = "chooseDevice.html";
             });
-            $(document).on('click', '.device', function() {
+		});
+		
+		$(function() {
+			$( ".device" ).click(function( event ) {
 				$(this).css("box-shadow","0px 0px 10px #fff");
 				localStorage.currentSchedule = $(this).attr('id');
                 event.preventDefault();	
