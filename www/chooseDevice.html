@@ -49,6 +49,7 @@
                 event.preventDefault();
 				localStorage.currentSchedule = $(this).attr('id');
 				localStorage.prevPage = "chooseDevice.html";
+				localStorage.pageid = $(this).attr('id');
                 window.location = "schedule.html";
             });
         });

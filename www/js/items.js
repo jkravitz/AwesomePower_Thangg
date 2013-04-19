@@ -19,7 +19,6 @@
 
 var items = getItems();
 var numItems = countItems();
-var currentSchedule = localStorage.currentSchedule;
 
 function getItems() {
 	if (localStorage.items == undefined) {
@@ -34,7 +33,8 @@ function getItems() {
 									 friday:[], 
 									 saturday:[], 
 									 sunday:[]
-									 }
+									 },
+						deviceLocation : 'Room A'
 						},
 				 item2: {name : 'Item 2',
 						 status : 'on', 
@@ -47,8 +47,9 @@ function getItems() {
 									 friday:[], 
 									 saturday:[], 
 									 sunday:[]
-									 }
 						},
+						deviceLocation : 'Room B'
+				},
 				 item3: {name : 'Item 3',
 						 status : 'on', 
 						 image : "img/websiteIcon.png",
@@ -60,7 +61,8 @@ function getItems() {
 									 friday:[], 
 									 saturday:[], 
 									 sunday:[]
-									 }
+									 },
+						deviceLocation : 'Room C'
 						},
 				 item4: {name : 'Item 4',
 						 status : 'on', 
@@ -73,7 +75,8 @@ function getItems() {
 									 friday:[], 
 									 saturday:[], 
 									 sunday:[]
-									 }
+									 },
+						deviceLocation : 'Room D'
 						},
 				 item5: {name : 'Item 5',
 						 status : 'on', 
@@ -86,7 +89,8 @@ function getItems() {
 									 friday:[], 
 									 saturday:[], 
 									 sunday:[]
-									 }
+									 },
+						deviceLocation : 'Room E'
 						},
 				 item6: {name : 'Item 6',
 						 status : 'on', 
@@ -99,7 +103,8 @@ function getItems() {
 									 friday:[], 
 									 saturday:[], 
 									 sunday:[]
-									 }
+									 },
+						deviceLocation : 'Room F'
 						},
 				item7: {name : 'Item 7',
 						 status : 'on', 
@@ -112,7 +117,8 @@ function getItems() {
 									 friday:[], 
 									 saturday:[], 
 									 sunday:[]
-									 }
+									 },
+						deviceLocation : 'Room G'
 						}
 				};
 	} else {
@@ -130,7 +136,7 @@ function countItems() {
     return size;
 }
 
-function newItem(id, itemName, imageLink) {
+function newItem(id, itemName, imageLink,deviceLocation) {
 	items[id] = {name : itemName,
 				status : 'off', 
 				image : imageLink,
@@ -142,7 +148,8 @@ function newItem(id, itemName, imageLink) {
 							friday:[], 
 							saturday:[], 
 							sunday:[]
-							}
+							},
+				deviceLocation: deviceLocation
 				};
 	
 }

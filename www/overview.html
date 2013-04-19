@@ -33,6 +33,7 @@
 				localStorage.currentSchedule = $(this).attr('id');
                 event.preventDefault();	
 				localStorage.prevPage = "overview.html";
+				localStorage.pageid = $(this).attr('id');
 				window.location = "schedule.html";
             });
         });
