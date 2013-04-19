@@ -118,6 +118,10 @@ input {
     -webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
 }
 
+.ui-dialog-header{
+	color:#FFFFFF; /*fuckkkkkkkkkkkkkkkkkkkkkkkkkkk */
+}
+
 
 /* Landscape layout (with min-width) */
 .app {

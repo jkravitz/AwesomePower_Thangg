@@ -85,7 +85,8 @@
 				});
 				var name = $( "#name" ),
 				location = $( "#location" ),
-				allFields = $( [] ).add( name ).add( location ),
+				icon = $("#icon"),
+				allFields = $( [] ).add( name ).add( location ).add( icon),
 				tips = $( ".validateTips" );
 				
 				 $( "#dialog-form" ).dialog({
@@ -97,10 +98,11 @@
 						Add: function() {
 							numItems++;
 							var createHTML = '<li class="allremoteitems thumbnail ui-state-default deviceoff "'+'id='+'item'+numItems+ '>'+
-											'<span>'+name.val()+'<br>'+'</span><img src="'+items[item].image+'" /></li>';
-							newItem('item'+numItems, name.val(), 'img/websiteIcon.png', location.val());
+											'<span>'+name.val()+'<br>'+'</span><img src="'+icon.val()+'" /></li>';
+							newItem('item'+numItems, name.val(), icon.val(), location.val());
 							$("#sortable").prepend(createHTML);
 							$( this ).dialog( "close" );
+							window.scrollTo(0, 0);
 						},
 						Cancel: function() {
 							$( this ).dialog( "close" );
@@ -129,14 +131,21 @@
 				<div class="rightButton button scheduleButton">temp. Schedule</div>
 			</div>
 			<div id="dialog-form" title="Add New Device">
-				<p class="validateTips">All form fields are required.</p>
-				 
 				<form>
 					<fieldset>
 						<label for="name">Name</label>
 						<input type="text" name="name" id="name" value="" class="text ui-widget-content ui-corner-all" />
 						<label for="location">Location</label>
 						<input type="text" name="location" id="location" value="" class="text ui-widget-content ui-corner-all" />
+						<select name="icon" id="icon">
+						<option value="img\DeviceIcons\MacBook.png">Computer</option>
+						<option value="img\DeviceIcons\air_purifier.png">Humidifier</option>
+						<option value="img\DeviceIcons\blend.png">Blender</option>
+						<option value="img\DeviceIcons\hard_drive.png">Ext. HD</option>
+						<option value="img\DeviceIcons\heat.png">Heater</option>
+						<option value="img\DeviceIcons\iPhone.png">Phone Charger</option>
+						<option value="img\DeviceIcons\light.png">Light</option>
+						</select>
 					</fieldset>
 				</form>
 			</div>
