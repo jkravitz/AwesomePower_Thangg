@@ -94,6 +94,9 @@
 					height: 300,
 					width: 350,
 					modal: true,
+					beforeClose: function() {
+						window.scrollTo(0, 0);
+					},
 					buttons: {
 						Add: function() {
 							numItems++;
