@@ -131,10 +131,13 @@ input {
     -webkit-user-select: text;                  /* prevent copy paste, to allow, change 'none' to 'text' */
 }
 
-.ui-dialog-header{
+.ui-dialog-header {
 	color:#FFFFFF; /*fuckkkkkkkkkkkkkkkkkkkkkkkkkkk */
 }
 
+.ui-dialog-titlebar-close {
+  display: none;
+}
 
 /* Landscape layout (with min-width) */
 .app {
