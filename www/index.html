@@ -50,7 +50,10 @@
 					placeholder: "ui-state-highlight allremoteitems",
                     containment: "document",
 					items: "li:not(.addIcon)",
-                    delay: 200
+                    delay: 200,
+                    activate: function(event, ui) {
+                        $("#trash").toggle("fade");
+                    }
                 });
                 $( "#draggable" ).draggable({
                     connectToSortable: "#sortable",
@@ -123,21 +126,11 @@
                 
                 $("#trash").droppable({
                     accept: ".allremoteitems",
-                    activeClass: "trash-hover",
                     hoverClass: "trash-active",
                     tolerance: "touch",
-                    /*activate: function(event, ui) {
-                        $(this).children().attr('src', "img/IconShock - Android Icons/trash_can_add.png");
-                    },
                     deactivate: function(event, ui) {
-                        $(this).children().attr('src', "img/IconShock - Android Icons/trash_can.png");
+                        $("#trash").toggle("fade");
                     },
-                    over: function(event, ui) {
-                        $(this).children().attr('src', "img/IconShock - Android Icons/trash_can_open_add.png");
-                    },
-                    out: function(event, ui) {
-                        $(this).children().attr('src', "img/IconShock - Android Icons/trash_can_add.png");
-                    },*/
                     drop: function(event, ui) {
                         $(ui.helper.context).remove();
                     }
