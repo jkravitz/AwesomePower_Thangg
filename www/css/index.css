@@ -223,15 +223,17 @@ input {
 	border-radius: 2px;
 }
 
-.deviceSchedule > div:nth-child(odd) { 
-	background-color: rgba(255,255,255, 1);//rgba(210,210,255,0.5);
+.deviceSchedule > div:nth-child(odd) {
+	background-color: rgba(255,255,255, .5);
 	box-shadow:0px 0px 3px rgba(0,0,0,0.8);
 }
 
-.deviceSchedule > div:nth-child(odd) .time > div{ 
-	//background-color: rgba(0,0,0,0.4); 
-	
-	opacity:0.9;
+.type-on {
+    background-color: rgba(255,255,255, .9);
+}
+
+.type-off {
+    background-color: rgba(0,0,0, .9);
 }
 
 .day { 
@@ -248,9 +250,8 @@ input {
 }
 .time > div {
 	box-sizing: border-box;
-	border: 1px solid rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.8);
 	opacity:0.6;
-	background-image:url('../img/grey_wash_wall.png');
 	border-radius:3px; 
 	height: 18px;
 	position: absolute;

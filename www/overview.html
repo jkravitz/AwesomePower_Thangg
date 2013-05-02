@@ -10,11 +10,11 @@
     <script  src="jquery/js/jquery.ui.touch-punch.js"></script>
 	<script  src="./js/items.js"></script>
     <style>
-        
+
 		#leftcolumn {
 			padding: 0px 10px;
 		}
-			
+
     </style>
     <script type="application/javascript">
 		$(function() {
@@ -24,29 +24,29 @@
                 window.location = "index.html";
             });
 		});
-		$(function() { 
+		$(function() {
 			$( "#plusSchedule" ).click(function( event ) {
                 event.preventDefault();
 				localStorage.prevPage = "overview.html";
                 window.location = "chooseDevice.html";
             });
 		});
-		
+
 		$(function() {
 			$( ".device" ).click(function( event ) {
 				$(this).css("box-shadow","0px 0px 10px #fff");
 				localStorage.currentSchedule = $(this).attr('id');
-                event.preventDefault();	
+                event.preventDefault();
 				localStorage.prevPage = "overview.html";
 				localStorage.pageid = $(this).attr('id');
 				window.location = "schedule.html";
             });
         });
-		
-		
+
+
     </script>
 </head>
-    
+
 <body class="overview">
     <div id="header">
 		<!--<div class="leftButton button remoteButton"><span>Back</span></div>-->
@@ -58,22 +58,22 @@
 	<div class="addSchedule">
 		<img src="img/plus2.png" alt="plus" id="plusSchedule">
 	</div>
-	
+
 	<script>
 		/*function timeStringToPercent(time) {
 			var patt1=/[^\.]/g;
 			var numArray = time.match(patt1);
-					
+
 			var hour = numArray[0] + "" + numArray[1];
 			var minute = numArray[2] + "" + numArray[3];
 			var totalMinutes = hour*60 + minute;
-					
+
 			return totalMinutes/1440;
 		}*/
-		
+
 		function dayToString(day) {
 			var fullDay = '';
-			switch(day) {	
+			switch(day) {
 				case 'Mon':
 					fullDay = 'monday';
 					break;
@@ -98,61 +98,59 @@
 			};
 			return fullDay;
 		}
-				
-				
-		
+
+
+
 		function capitalizeFirstLetter(string) {
 			return string.charAt(0).toUpperCase() + string.slice(1);
 		}
-		
-			
+
+
 		for (var item in items) {
 			var idItem = item;
-			
+
 			if (items[item].hasSchedule == 'yes') {
-				var createHTML = 
+				var createHTML =
 				'<div class="device" id="'+idItem+'">'+
 					'<div class="deviceImage"><span>'+items[item].name+'</span><img src="'+items[item].image+'" /></div>'+
 					'<div class="deviceSchedule">';
 				for (var i = 0; i < items[item].fullschedule.length; i++) {
 					day = items[item].fullschedule[i];
 					var classDay = dayToString(day.day);
-					
-					createHTML = createHTML + 
-						'<div class="'+classDay+'">' + 
+
+					createHTML = createHTML +
+						'<div class="'+classDay+'">' +
 							'<div class="day">'+
-								capitalizeFirstLetter(classDay) + 
-							'</div>' + 
+								capitalizeFirstLetter(classDay) +
+							'</div>' +
 							'<div class="time">';
 						//	alert(day.times.length);
-					
-					for (var j=0;j<day.times.length;j = j+2) {
-					
-						timeOn = day.times[j];
-						timeOff = day.times[j+1];
-											
-						var startPercent = 100*timeOn.time/24;
-						var endPercent = 100*timeOff.time/24;
-						var widthPercent = endPercent - startPercent;
-						
-						createHTML = createHTML + 
-							"<div style=\"width: "+widthPercent+"%; "+
-								"left: "+startPercent+"%; \"></div>";
-								
+
+					for (var j=0; j<day.times.length; j++) {
+
+						var time = day.times[j];
+                        var type = 'type-' + time.type;
+
+						var startPercent = 100*time.time/24;
+						var widthPercent = 100/24;
+
+						createHTML = createHTML +
+							'<div style="width: '+widthPercent+'%; left: '+startPercent+'%;" class="'+type+'"></div>';
+
 					}
-					
-					createHTML = createHTML + 
+
+					createHTML = createHTML +
 						'</div></div>';
-				
+
 				}
-				createHTML = createHTML + 
-						'</div></div>';	
+				createHTML = createHTML +
+						'</div></div>';
 
 				$("#leftcolumn").append(createHTML);
 			}
 		}
-				
-		
+
+
 	</script>
 </body>
 </html>
