@@ -132,7 +132,7 @@ input {
 }
 
 .ui-dialog-header {
-	color:#FFFFFF; /*fuckkkkkkkkkkkkkkkkkkkkkkkkkkk */
+    color:#FFFFFF;
 }
 
 .ui-dialog-titlebar-close {
@@ -212,14 +212,12 @@ input {
 	float: left;
 }
 
-.deviceSchedule > div { 
-	//background-color: #555555;
+.deviceSchedule > div {
 	margin: 0px 1%;
 	padding: 3px 0px 3px 3px;
 	height: 12px; 
 	position: relative; 
 	width: 98%;
-	/*box-shadow:1px 1px 5px #555555;*/ 
 	border-radius: 2px;
 }
 
@@ -255,7 +253,6 @@ input {
 	border-radius:3px; 
 	height: 18px;
 	position: absolute;
-	/*box-shadow:1px 1px 5px #555555;*/ 
 	top: -3px;
 }
 

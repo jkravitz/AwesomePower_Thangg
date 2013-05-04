@@ -115,7 +115,7 @@
 					'<div class="deviceImage"><span>'+items[item].name+'</span><img src="'+items[item].image+'" /></div>'+
 					'<div class="deviceSchedule">';
 				for (var i = 0; i < items[item].fullschedule.length; i++) {
-					day = items[item].fullschedule[i];
+					var day = items[item].fullschedule[i];
 					var classDay = dayToString(day.day);
 
 					createHTML = createHTML +
@@ -132,7 +132,7 @@
                         var type = 'type-' + time.type;
 
 						var startPercent = 100*time.time/24;
-						var widthPercent = 100/24;
+						var widthPercent = Math.min(100/24, 100 - startPercent);
 
 						createHTML = createHTML +
 							'<div style="width: '+widthPercent+'%; left: '+startPercent+'%;" class="'+type+'"></div>';
